@@ -9,8 +9,13 @@ Make Copper Golems interact with Copper Buttons, like originally intended, and b
 
 -------------------------
 
-### 🌸 Features
+### 🤖 Features
 
+#### CRAFTABLE COPPER GOLEM STATUES
+
+Can't wait to have your Copper Golem statue? No problem! You can now craft them using a carved pumpkin and a Copper Block
+
+<img src="./.docs/craftable_copper_golem_statue.png" alt="Craftable Copper Golem Statue" />
 
 -------------------------
 
