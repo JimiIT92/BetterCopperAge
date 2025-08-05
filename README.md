@@ -11,9 +11,28 @@ Make Copper Golems interact with Copper Buttons, like originally intended, and b
 
 ### 🤖 Features
 
+### COPPER BUTTONS
+
+Originally, Copper Golem was designed to interact with Copper Buttons.
+
+Unfortunately, these have not been added with the Fall Drop.... until now!
+
+<img src="./.docs/copper_buttons.png" alt="Copper Buttons" />
+
+Craft them using any Copper Block in a Stonecutter and use them in your builds.
+
+<img src="./.docs/copper_button_crafting.png" alt="Copper Button Crafting" />
+
+They are also a unique redstone component, because they'll stay pressed the longer they're oxidized. 
+
+When non-oxidized, they'll act like Stone buttons and stay pressed for 20 ticks, with each oxidation level increasing
+the duration by 10 ticks.
+
+If they are pressed while oxidizing, waxing or scraping, their press state will be reset.
+
 #### CRAFTABLE COPPER GOLEM STATUES
 
-Can't wait to have your Copper Golem statue? No problem! You can now craft them using a carved pumpkin and a Copper Block
+Can't wait to have your Copper Golem statue? No problem! You can now craft them using a carved pumpkin and a Copper Block.
 
 <img src="./.docs/craftable_copper_golem_statue.png" alt="Craftable Copper Golem Statue" />
 

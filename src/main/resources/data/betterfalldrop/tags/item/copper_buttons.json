@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "betterfalldrop:copper_button",
+    "betterfalldrop:exposed_copper_button",
+    "betterfalldrop:weathered_copper_button",
+    "betterfalldrop:oxidized_copper_button",
+    "betterfalldrop:waxed_copper_button",
+    "betterfalldrop:waxed_exposed_copper_button",
+    "betterfalldrop:waxed_weathered_copper_button",
+    "betterfalldrop:waxed_oxidized_copper_button"
+  ]
+}

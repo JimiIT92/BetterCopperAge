@@ -1,6 +1,10 @@
 package org.hendrix.betterfalldrop;
 
 import net.fabricmc.api.ModInitializer;
+import org.hendrix.betterfalldrop.core.BFDBlocks;
+import org.hendrix.betterfalldrop.core.BFDEvents;
+import org.hendrix.betterfalldrop.core.BFDItemGroups;
+import org.hendrix.betterfalldrop.core.BFDItems;
 
 /**
  * Hendrix's Better Fall Drop
@@ -18,6 +22,11 @@ public final class BetterFallDrop implements ModInitializer {
      */
     @Override
     public void onInitialize() {
+        BFDItemGroups.register();
+        BFDItems.register();
+        BFDBlocks.register();
+
+        BFDEvents.register();
     }
 
 }
