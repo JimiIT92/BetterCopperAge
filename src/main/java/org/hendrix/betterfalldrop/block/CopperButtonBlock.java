@@ -6,7 +6,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.hendrix.betterfalldrop.BetterFallDrop;
-import org.hendrix.betterfalldrop.core.BFDBlocks;
+import org.hendrix.betterfalldrop.utils.BlockUtils;
 
 /**
  * {@link BetterFallDrop Better Fall Drop} {@link ButtonBlock Copper Button Block}
@@ -131,18 +131,7 @@ public final class CopperButtonBlock extends ButtonBlock implements BFDOxidizabl
      * @return {@link Boolean True if the Block is being waxed}
      */
     private boolean isBeingWaxed(final BlockState state, final BlockState oldState) {
-        return isWaxed &&
-        (
-            oldState.getBlock().equals(BFDBlocks.COPPER_BUTTON) ||
-            oldState.getBlock().equals(BFDBlocks.EXPOSED_COPPER_BUTTON) ||
-            oldState.getBlock().equals(BFDBlocks.WEATHERED_COPPER_BUTTON) ||
-            oldState.getBlock().equals(BFDBlocks.OXIDIZED_COPPER_BUTTON)
-        ) && (
-            state.getBlock().equals(BFDBlocks.WAXED_COPPER_BUTTON) ||
-            state.getBlock().equals(BFDBlocks.WAXED_EXPOSED_COPPER_BUTTON) ||
-            state.getBlock().equals(BFDBlocks.WAXED_WEATHERED_COPPER_BUTTON) ||
-            state.getBlock().equals(BFDBlocks.WAXED_OXIDIZED_COPPER_BUTTON)
-        );
+        return isWaxed && BlockUtils.isOxidizableBlock(oldState.getBlock()) && BlockUtils.isWaxedCopperBlock(state.getBlock());
     }
 
     /**
@@ -154,18 +143,7 @@ public final class CopperButtonBlock extends ButtonBlock implements BFDOxidizabl
      * @return {@link Boolean True if the Block is being un-waxed}
      */
     private boolean isBeingUnwaxed(final BlockState state, final BlockState oldState) {
-        return !isWaxed &&
-        (
-            state.getBlock().equals(BFDBlocks.COPPER_BUTTON) ||
-            state.getBlock().equals(BFDBlocks.EXPOSED_COPPER_BUTTON) ||
-            state.getBlock().equals(BFDBlocks.WEATHERED_COPPER_BUTTON) ||
-            state.getBlock().equals(BFDBlocks.OXIDIZED_COPPER_BUTTON)
-        ) && (
-            oldState.getBlock().equals(BFDBlocks.WAXED_COPPER_BUTTON) ||
-            oldState.getBlock().equals(BFDBlocks.WAXED_EXPOSED_COPPER_BUTTON) ||
-            oldState.getBlock().equals(BFDBlocks.WAXED_WEATHERED_COPPER_BUTTON) ||
-            oldState.getBlock().equals(BFDBlocks.WAXED_OXIDIZED_COPPER_BUTTON)
-        );
+        return !isWaxed && BlockUtils.isOxidizableBlock(state.getBlock()) && BlockUtils.isWaxedCopperBlock(oldState.getBlock());
     }
 
 }

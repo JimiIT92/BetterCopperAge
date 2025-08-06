@@ -18,6 +18,9 @@
       "org.hendrix.${mod_id}.${archives_base_name}"
     ]
   },
+  "mixins": [
+    "${mod_id}.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",

@@ -60,7 +60,7 @@ public interface BFDOxidizable extends Oxidizable {
     }
 
     /**
-     * Get the {@link Optional< BlockState > decreased Oxidation Block State}
+     * Get the {@link Optional<BlockState> decreased Oxidation Block State}
      *
      * @param state The {@link BlockState current Block State}
      * @return The {@link Optional<BlockState> decreased Oxidation Block State}
