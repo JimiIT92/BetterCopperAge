@@ -6,7 +6,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.hendrix.betterfalldrop.BetterFallDrop;
-import org.hendrix.betterfalldrop.utils.BlockUtils;
 
 /**
  * {@link BetterFallDrop Better Fall Drop} {@link ButtonBlock Copper Button Block}
@@ -85,7 +84,7 @@ public final class CopperButtonBlock extends ButtonBlock implements BFDOxidizabl
      */
     @Override
     protected void onBlockAdded(final BlockState state, final World world, final BlockPos pos, final BlockState oldState, final boolean notify) {
-        if(shouldResetButton(state, oldState)) {
+        if(shouldResetPoweredState(isWaxed, state, oldState)) {
             world.setBlockState(pos, state.with(POWERED, Boolean.FALSE));
         }
         super.onBlockAdded(state, world, pos, oldState, notify);
@@ -108,42 +107,6 @@ public final class CopperButtonBlock extends ButtonBlock implements BFDOxidizabl
      */
     public boolean isWaxed() {
         return isWaxed;
-    }
-
-    /**
-     * Check if the {@link #POWERED Powered State} should be reset
-     *
-     * @param state The {@link BlockState current Block State}
-     * @param oldState The {@link BlockState previous Block State}
-     *
-     * @return {@link Boolean True if the Block is being waxed or un-waxed}
-     */
-    public boolean shouldResetButton(final BlockState state, final BlockState oldState) {
-        return isBeingWaxed(state, oldState) || isBeingUnwaxed(state, oldState);
-    }
-
-    /**
-     * Check if the {@link Block Block} is being waxed
-     *
-     * @param state The {@link BlockState current Block State}
-     * @param oldState The {@link BlockState previous Block State}
-     *
-     * @return {@link Boolean True if the Block is being waxed}
-     */
-    private boolean isBeingWaxed(final BlockState state, final BlockState oldState) {
-        return isWaxed && BlockUtils.isOxidizableBlock(oldState.getBlock()) && BlockUtils.isWaxedCopperBlock(state.getBlock());
-    }
-
-    /**
-     * Check if the {@link Block Block} is being un-waxed
-     *
-     * @param state The {@link BlockState current Block State}
-     * @param oldState The {@link BlockState previous Block State}
-     *
-     * @return {@link Boolean True if the Block is being un-waxed}
-     */
-    private boolean isBeingUnwaxed(final BlockState state, final BlockState oldState) {
-        return !isWaxed && BlockUtils.isOxidizableBlock(state.getBlock()) && BlockUtils.isWaxedCopperBlock(oldState.getBlock());
     }
 
 }

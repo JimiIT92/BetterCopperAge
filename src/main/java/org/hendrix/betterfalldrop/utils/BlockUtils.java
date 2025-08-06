@@ -2,40 +2,11 @@ package org.hendrix.betterfalldrop.utils;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Oxidizable;
-import org.hendrix.betterfalldrop.block.BFDOxidizable;
-import org.hendrix.betterfalldrop.core.BFDBlocks;
-
-import java.util.Arrays;
 
 /**
  * Utility methods for {@link Block Blocks}
  */
 public final class BlockUtils {
-
-    /**
-     * Check if a {@link Block Block} is waxed
-     *
-     * @param block The {@link Block Block to check}
-     * @return {@link Boolean True if the Block is waxed}
-     */
-    public static boolean isWaxedCopperBlock(final Block block) {
-        return Arrays.asList(
-                BFDBlocks.WAXED_COPPER_BUTTON,
-                BFDBlocks.WAXED_EXPOSED_COPPER_BUTTON,
-                BFDBlocks.WAXED_WEATHERED_COPPER_BUTTON,
-                BFDBlocks.WAXED_OXIDIZED_COPPER_BUTTON
-        ).contains(block);
-    }
-
-    /**
-     * Check if a {@link Block Block} is oxidizable
-     *
-     * @param block The {@link Block Block to check}
-     * @return {@link Boolean True if the Block is oxidizable}
-     */
-    public static boolean isOxidizableBlock(final Block block) {
-        return BFDOxidizable.BFD_OXIDATION_LEVEL_INCREASES.get().containsKey(block) || BFDOxidizable.BFD_OXIDATION_LEVEL_DECREASES.get().containsKey(block);
-    }
 
     /**
      * Get the {@link String Block Name} of a modded {@link Oxidizable Copper Block}

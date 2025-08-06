@@ -10,6 +10,8 @@ import net.minecraft.state.property.Properties;
 import org.hendrix.betterfalldrop.BetterFallDrop;
 import org.hendrix.betterfalldrop.core.BFDBlocks;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -32,6 +34,16 @@ public interface BFDOxidizable extends Oxidizable {
      * The {@link Supplier Oxidizable Blocks Oxidation Level Decreases Map}
      */
     Supplier<BiMap<Block, Block>> BFD_OXIDATION_LEVEL_DECREASES = Suppliers.memoize(() -> BFD_OXIDATION_LEVEL_INCREASES.get().inverse());
+
+    /**
+     * The {@link Supplier Waxed Blocks}
+     */
+    Supplier<List<Block>> WAXED_BLOCKS = Suppliers.memoize(() -> Arrays.asList(
+        BFDBlocks.WAXED_COPPER_BUTTON,
+        BFDBlocks.WAXED_EXPOSED_COPPER_BUTTON,
+        BFDBlocks.WAXED_WEATHERED_COPPER_BUTTON,
+        BFDBlocks.WAXED_OXIDIZED_COPPER_BUTTON
+    ));
 
     /**
      * Get the {@link Optional <Block> Block} decreased {@link Oxidizable.OxidationLevel Oxidation Level}
@@ -112,4 +124,63 @@ public interface BFDOxidizable extends Oxidizable {
         });
     }
 
+    /**
+     * Check if the Powered State of an {@link Oxidizable Oxidizable Block} should be reset
+     *
+     * @param isWaxed {@link Boolean Whether the Block is waxed}
+     * @param state The {@link BlockState current Block State}
+     * @param oldState The {@link BlockState previous Block State}
+     *
+     * @return {@link Boolean True if the Block is being waxed or un-waxed}
+     */
+    default Boolean shouldResetPoweredState(final Boolean isWaxed, final BlockState state, final BlockState oldState) {
+        return isBeingWaxed(isWaxed, state, oldState) || isBeingUnwaxed(isWaxed, state, oldState);
+    }
+
+    /**
+     * Check if the {@link Block Block} is being waxed
+     *
+     * @param isWaxed {@link Boolean Whether the Block is waxed}
+     * @param state The {@link BlockState current Block State}
+     * @param oldState The {@link BlockState previous Block State}
+     *
+     * @return {@link Boolean True if the Block is being waxed}
+     */
+    default Boolean isBeingWaxed(final boolean isWaxed, final BlockState state, final BlockState oldState) {
+        return isWaxed && isOxidizableBlock(oldState) && isWaxedCopperBlock(state);
+    }
+
+    /**
+     * Check if the {@link Block Block} is being un-waxed
+     *
+     * @param isWaxed {@link Boolean Whether the Block is waxed}
+     * @param state The {@link BlockState current Block State}
+     * @param oldState The {@link BlockState previous Block State}
+     *
+     * @return {@link Boolean True if the Block is being un-waxed}
+     */
+    default boolean isBeingUnwaxed(final boolean isWaxed, final BlockState state, final BlockState oldState) {
+        return !isWaxed && isOxidizableBlock(state) && isWaxedCopperBlock(oldState);
+    }
+
+    /**
+     * Check if a {@link Block Block} is oxidizable
+     *
+     * @param blockState The {@link Block Block State to check}
+     * @return {@link Boolean True if the Block is oxidizable}
+     */
+    static boolean isOxidizableBlock(final BlockState blockState) {
+        final Block block = blockState.getBlock();
+        return BFDOxidizable.BFD_OXIDATION_LEVEL_INCREASES.get().containsKey(block) || BFDOxidizable.BFD_OXIDATION_LEVEL_DECREASES.get().containsKey(block);
+    }
+
+    /**
+     * Check if a {@link Block Block} is waxed
+     *
+     * @param blockState The {@link BlockState Block State to check}
+     * @return {@link Boolean True if the Block is waxed}
+     */
+    static boolean isWaxedCopperBlock(final BlockState blockState) {
+        return WAXED_BLOCKS.get().contains(blockState.getBlock());
+    }
 }

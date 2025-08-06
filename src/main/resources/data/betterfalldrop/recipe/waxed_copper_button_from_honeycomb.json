@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "waxed_copper_button",
+  "ingredients": [
+    "betterfalldrop:copper_button",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "betterfalldrop:waxed_copper_button"
+  }
+}
