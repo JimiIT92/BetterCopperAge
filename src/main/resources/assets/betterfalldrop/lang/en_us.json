@@ -7,5 +7,13 @@
   "block.betterfalldrop.waxed_copper_button": "Waxed Copper Button",
   "block.betterfalldrop.waxed_exposed_copper_button": "Waxed Exposed Copper Button",
   "block.betterfalldrop.waxed_weathered_copper_button": "Waxed Weathered Copper Button",
-  "block.betterfalldrop.waxed_oxidized_copper_button": "Waxed Oxidized Copper Button"
+  "block.betterfalldrop.waxed_oxidized_copper_button": "Waxed Oxidized Copper Button",
+  "block.betterfalldrop.medium_weighted_pressure_plate": "Medium Weighted Pressure Plate",
+  "block.betterfalldrop.exposed_medium_weighted_pressure_plate": "Exposed Medium Weighted Pressure Plate",
+  "block.betterfalldrop.weathered_medium_weighted_pressure_plate": "Weathered Medium Weighted Pressure Plate",
+  "block.betterfalldrop.oxidized_medium_weighted_pressure_plate": "Oxidized Medium Weighted Pressure Plate",
+  "block.betterfalldrop.waxed_medium_weighted_pressure_plate": "Waxed Medium Weighted Pressure Plate",
+  "block.betterfalldrop.waxed_exposed_medium_weighted_pressure_plate": "Waxed Exposed Medium Weighted Pressure Plate",
+  "block.betterfalldrop.waxed_weathered_medium_weighted_pressure_plate": "Waxed Weathered Medium Weighted Pressure Plate",
+  "block.betterfalldrop.waxed_oxidized_medium_weighted_pressure_plate": "Waxed Oxidized Medium Weighted Pressure Plate"
 }

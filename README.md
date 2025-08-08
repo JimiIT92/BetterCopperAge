@@ -30,6 +30,18 @@ the duration by 10 ticks.
 
 If they are pressed while oxidizing, waxing or scraping, their press state will be reset.
 
+### MEDIUM WEIGHTED PRESSURE PLATES
+
+Crafted with 2 copper ingots, these new Weighted Pressure Plates acts as a middle ground between the Light and the
+Heavy Weighted ones.
+
+<img src="./.docs/medium_weighted_pressure_plate_crafting.png" alt="Medium Weighted Pressure Plate Crafting" />
+
+They oxidize over time and can be waxed, like any other Copper Block, and behave exactly like a Weighted Pressure Plate
+would do (except that you'll need fewer items to reach power level 15).
+
+<img src="./.docs/medium_weighted_pressure_plates.png" alt="Medium Weighted Pressure Plates" />
+
 #### CRAFTABLE COPPER GOLEM STATUES
 
 Can't wait to have your Copper Golem statue? No problem! You can now craft them using a carved pumpkin and a Copper Block.

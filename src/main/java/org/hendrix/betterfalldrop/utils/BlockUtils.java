@@ -17,7 +17,20 @@ public final class BlockUtils {
      * @return The {@link String Block Name}
      */
     public static String copperBlockName(final Oxidizable.OxidationLevel oxidationLevel, final Boolean isWaxed, final String blockName) {
-        return (isWaxed ? "waxed_" : "") + BlockUtils.copperOxidationLevelName(oxidationLevel) + (Oxidizable.OxidationLevel.UNAFFECTED.equals(oxidationLevel) ? "" : "_") + "copper_" + blockName;
+        return oxidizableBlockName(oxidationLevel, isWaxed, "copper", blockName);
+    }
+
+    /**
+     * Get the {@link String Block Name} of a modded {@link Oxidizable Oxidizable Block}
+     *
+     * @param oxidationLevel The {@link Oxidizable.OxidationLevel Oxidation Level}
+     * @param isWaxed {@link Boolean Whether the Block is waxed}
+     * @param oxidizableBlockName The {@link String Oxidizable Block Name}
+     * @param blockName The {@link String Block Name}
+     * @return The {@link String Block Name}
+     */
+    public static String oxidizableBlockName(final Oxidizable.OxidationLevel oxidationLevel, final Boolean isWaxed, final String oxidizableBlockName, final String blockName) {
+        return (isWaxed ? "waxed_" : "") + BlockUtils.copperOxidationLevelName(oxidationLevel) + (Oxidizable.OxidationLevel.UNAFFECTED.equals(oxidationLevel) ? "" : "_") + oxidizableBlockName + "_" + blockName;
     }
 
     /**

@@ -33,6 +33,14 @@ public final class BFDItemGroups {
                         entries.add(BFDBlocks.WAXED_EXPOSED_COPPER_BUTTON);
                         entries.add(BFDBlocks.WAXED_WEATHERED_COPPER_BUTTON);
                         entries.add(BFDBlocks.WAXED_OXIDIZED_COPPER_BUTTON);
+                        entries.add(BFDBlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE);
+                        entries.add(BFDBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+                        entries.add(BFDBlocks.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+                        entries.add(BFDBlocks.OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+                        entries.add(BFDBlocks.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+                        entries.add(BFDBlocks.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+                        entries.add(BFDBlocks.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+                        entries.add(BFDBlocks.WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
                     })
                     .build()
     );

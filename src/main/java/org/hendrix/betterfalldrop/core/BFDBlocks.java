@@ -4,6 +4,7 @@ import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.Oxidizable;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.HoneycombItem;
@@ -12,6 +13,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.hendrix.betterfalldrop.BetterFallDrop;
 import org.hendrix.betterfalldrop.block.CopperButtonBlock;
+import org.hendrix.betterfalldrop.block.MediumWeightedPressurePlateBlock;
 import org.hendrix.betterfalldrop.utils.BlockUtils;
 import org.hendrix.betterfalldrop.utils.IdentifierUtils;
 import org.hendrix.betterfalldrop.utils.RegistryKeyUtils;
@@ -35,6 +37,16 @@ public final class BFDBlocks {
     public static final Block WAXED_WEATHERED_COPPER_BUTTON = registerCopperButton(Oxidizable.OxidationLevel.WEATHERED, true);
     public static final Block WAXED_OXIDIZED_COPPER_BUTTON = registerCopperButton(Oxidizable.OxidationLevel.OXIDIZED, true);
 
+    public static final Block MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.UNAFFECTED, false);
+    public static final Block EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.EXPOSED, false);
+    public static final Block WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.WEATHERED, false);
+    public static final Block OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.OXIDIZED, false);
+
+    public static final Block WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.UNAFFECTED, true);
+    public static final Block WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.EXPOSED, true);
+    public static final Block WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.WEATHERED, true);
+    public static final Block WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.OXIDIZED, true);
+
     //#endregion
 
     /**
@@ -48,6 +60,19 @@ public final class BFDBlocks {
         final String name = BlockUtils.copperBlockName(oxidationLevel, isWaxed, "button");
         final AbstractBlock.Settings settings = AbstractBlock.Settings.create().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
         return registerBlock(name, Suppliers.memoize(() -> new CopperButtonBlock(oxidationLevel, isWaxed, settings)));
+    }
+
+    /**
+     * Register a {@link MediumWeightedPressurePlateBlock Copper Pressure Plate}
+     *
+     * @param oxidationLevel The {@link Oxidizable.OxidationLevel Oxidation Level}
+     * @param isWaxed {@link Boolean Whether the button is waxed}
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerCopperPressurePlate(final Oxidizable.OxidationLevel oxidationLevel, final boolean isWaxed) {
+        final String name = BlockUtils.oxidizableBlockName(oxidationLevel, isWaxed, "medium_weighted", "pressure_plate");
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(MapColor.GOLD).solid().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new MediumWeightedPressurePlateBlock(oxidationLevel, isWaxed, settings)));
     }
 
     /**
@@ -91,6 +116,10 @@ public final class BFDBlocks {
         unwaxedToWaxedBlocks.put(EXPOSED_COPPER_BUTTON, WAXED_EXPOSED_COPPER_BUTTON);
         unwaxedToWaxedBlocks.put(WEATHERED_COPPER_BUTTON, WAXED_WEATHERED_COPPER_BUTTON);
         unwaxedToWaxedBlocks.put(OXIDIZED_COPPER_BUTTON, WAXED_OXIDIZED_COPPER_BUTTON);
+        unwaxedToWaxedBlocks.put(MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        unwaxedToWaxedBlocks.put(EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        unwaxedToWaxedBlocks.put(WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        unwaxedToWaxedBlocks.put(OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
     }
 
 }

@@ -27,6 +27,9 @@ public interface BFDOxidizable extends Oxidizable {
             .put(BFDBlocks.COPPER_BUTTON, BFDBlocks.EXPOSED_COPPER_BUTTON)
             .put(BFDBlocks.EXPOSED_COPPER_BUTTON, BFDBlocks.WEATHERED_COPPER_BUTTON)
             .put(BFDBlocks.WEATHERED_COPPER_BUTTON, BFDBlocks.OXIDIZED_COPPER_BUTTON)
+            .put(BFDBlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE, BFDBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE)
+            .put(BFDBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE, BFDBlocks.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE)
+            .put(BFDBlocks.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE, BFDBlocks.OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE)
             .build()
     );
 
@@ -42,7 +45,11 @@ public interface BFDOxidizable extends Oxidizable {
         BFDBlocks.WAXED_COPPER_BUTTON,
         BFDBlocks.WAXED_EXPOSED_COPPER_BUTTON,
         BFDBlocks.WAXED_WEATHERED_COPPER_BUTTON,
-        BFDBlocks.WAXED_OXIDIZED_COPPER_BUTTON
+        BFDBlocks.WAXED_OXIDIZED_COPPER_BUTTON,
+        BFDBlocks.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
+        BFDBlocks.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
+        BFDBlocks.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
+        BFDBlocks.WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE
     ));
 
     /**
@@ -82,6 +89,9 @@ public interface BFDOxidizable extends Oxidizable {
             if(state.contains(Properties.POWERED)) {
                 return block.getStateWithProperties(state.with(Properties.POWERED, Boolean.FALSE));
             }
+            if(state.contains(Properties.POWER)) {
+                return block.getStateWithProperties(state.with(Properties.POWER, 0));
+            }
             return block.getStateWithProperties(state);
         });
     }
@@ -106,6 +116,9 @@ public interface BFDOxidizable extends Oxidizable {
         if(state.contains(Properties.POWERED)) {
             state = state.with(Properties.POWERED, Boolean.FALSE);
         }
+        if(state.contains(Properties.POWER)) {
+            state = state.with(Properties.POWER, 0);
+        }
         return BFDOxidizable.getUnaffectedOxidationBlock(state.getBlock()).getStateWithProperties(state);
     }
 
@@ -119,6 +132,9 @@ public interface BFDOxidizable extends Oxidizable {
         return BFDOxidizable.getIncreasedOxidationBlock(state.getBlock()).map((block) -> {
             if(state.contains(Properties.POWERED)) {
                 return block.getStateWithProperties(state.with(Properties.POWERED, Boolean.FALSE));
+            }
+            if(state.contains(Properties.POWER)) {
+                return block.getStateWithProperties(state.with(Properties.POWER, 0));
             }
             return block.getStateWithProperties(state);
         });

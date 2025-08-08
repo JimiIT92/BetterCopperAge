@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "betterfalldrop:medium_weighted_pressure_plate",
+    "betterfalldrop:exposed_medium_weighted_pressure_plate",
+    "betterfalldrop:weathered_medium_weighted_pressure_plate",
+    "betterfalldrop:oxidized_medium_weighted_pressure_plate",
+    "betterfalldrop:waxed_medium_weighted_pressure_plate",
+    "betterfalldrop:waxed_exposed_medium_weighted_pressure_plate",
+    "betterfalldrop:waxed_weathered_medium_weighted_pressure_plate",
+    "betterfalldrop:waxed_oxidized_medium_weighted_pressure_plate"
+  ]
+}
