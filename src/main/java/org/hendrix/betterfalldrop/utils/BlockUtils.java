@@ -1,6 +1,7 @@
 package org.hendrix.betterfalldrop.utils;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.Oxidizable;
 
 /**
@@ -45,6 +46,21 @@ public final class BlockUtils {
             case EXPOSED -> "exposed";
             case WEATHERED -> "weathered";
             case OXIDIZED -> "oxidized";
+        };
+    }
+
+    /**
+     * Get the {@link MapColor Map Color} of an {@link Oxidizable Oxidizable Block} based on the {@link Oxidizable.OxidationLevel Oxidation Level}
+     *
+     * @param oxidationLevel The {@link Oxidizable.OxidationLevel Oxidation Level}
+     * @return The {@link MapColor Map Color}
+     */
+    public static MapColor oxidizableMapColor(final Oxidizable.OxidationLevel oxidationLevel) {
+        return switch (oxidationLevel) {
+            case UNAFFECTED -> MapColor.ORANGE;
+            case EXPOSED -> MapColor.TERRACOTTA_LIGHT_GRAY;
+            case WEATHERED -> MapColor.DARK_AQUA;
+            case OXIDIZED -> MapColor.TEAL;
         };
     }
 

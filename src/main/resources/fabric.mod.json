@@ -16,6 +16,9 @@
   "entrypoints": {
     "main": [
       "org.hendrix.${mod_id}.${archives_base_name}"
+    ],
+    "client": [
+      "org.hendrix.${mod_id}.client.${archives_base_name}Client"
     ]
   },
   "mixins": [

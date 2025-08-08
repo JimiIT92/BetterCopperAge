@@ -2,17 +2,16 @@ package org.hendrix.betterfalldrop.core;
 
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.Oxidizable;
+import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.HoneycombItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import org.hendrix.betterfalldrop.BetterFallDrop;
 import org.hendrix.betterfalldrop.block.CopperButtonBlock;
+import org.hendrix.betterfalldrop.block.CopperFireBlock;
 import org.hendrix.betterfalldrop.block.MediumWeightedPressurePlateBlock;
 import org.hendrix.betterfalldrop.utils.BlockUtils;
 import org.hendrix.betterfalldrop.utils.IdentifierUtils;
@@ -47,6 +46,8 @@ public final class BFDBlocks {
     public static final Block WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.WEATHERED, true);
     public static final Block WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.OXIDIZED, true);
 
+    public static final Block COPPER_FIRE = registerCopperFire();
+
     //#endregion
 
     /**
@@ -71,8 +72,19 @@ public final class BFDBlocks {
      */
     private static Block registerCopperPressurePlate(final Oxidizable.OxidationLevel oxidationLevel, final boolean isWaxed) {
         final String name = BlockUtils.oxidizableBlockName(oxidationLevel, isWaxed, "medium_weighted", "pressure_plate");
-        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(MapColor.GOLD).solid().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(BlockUtils.oxidizableMapColor(oxidationLevel)).solid().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
         return registerBlock(name, Suppliers.memoize(() -> new MediumWeightedPressurePlateBlock(oxidationLevel, isWaxed, settings)));
+    }
+
+    /**
+     * Register the {@link CopperFireBlock Copper Fire Block}
+     *
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerCopperFire() {
+        final String name = "copper_fire";
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(MapColor.EMERALD_GREEN).replaceable().noCollision().breakInstantly().luminance((state) -> 13).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
+        return registerBlockWithoutBlockItem(name, Suppliers.memoize(() -> new CopperFireBlock(settings)));
     }
 
     /**

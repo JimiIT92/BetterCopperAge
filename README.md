@@ -11,6 +11,16 @@ Make Copper Golems interact with Copper Buttons, like originally intended, and b
 
 ### 🤖 Features
 
+### COPPER FIRE
+
+What happens if you mix Copper and Fire? You get Copper Fire!
+
+This new Green Flame can be obtained if a Copper Block is set on fire.
+
+<img src="./.docs/copper_fire.png" alt="Copper Fire" />
+
+Provides a light level of 13 and deals 1.5x fire damage
+
 ### COPPER BUTTONS
 
 Originally, Copper Golem was designed to interact with Copper Buttons.
