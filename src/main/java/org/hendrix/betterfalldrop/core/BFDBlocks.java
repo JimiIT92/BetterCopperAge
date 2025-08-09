@@ -46,11 +46,19 @@ public final class BFDBlocks {
 
     public static final Block COPPER_FIRE = registerCopperFire();
 
-    public static final Block IRON_BUTTON = registerButton("iron", BlockSetType.IRON, 15);
+    public static final Block CHISELED_IRON = registerChiseledBlock("iron", Blocks.IRON_BLOCK);
     public static final Block IRON_GRATE = registerGrate("iron", MapColor.IRON_GRAY, BlockSoundGroup.IRON);
+    public static final Block CUT_IRON = registerCutBlock("iron", Blocks.IRON_BLOCK);
+    public static final Block CUT_IRON_SLAB = registerCutSlab("iron", Suppliers.memoize(() -> CUT_IRON));
+    public static final Block CUT_IRON_STAIRS = registerCutStairs("iron", Suppliers.memoize(() -> CUT_IRON));
+    public static final Block IRON_BUTTON = registerButton("iron", BlockSetType.IRON, 15);
 
-    public static final Block GOLD_BUTTON = registerButton("gold", BlockSetType.GOLD, 5);
+    public static final Block CHISELED_GOLD = registerChiseledBlock("gold", Blocks.GOLD_BLOCK);
     public static final Block GOLDEN_GRATE = registerGrate("golden", MapColor.GOLD, BlockSoundGroup.METAL);
+    public static final Block CUT_GOLD = registerCutBlock("gold", Blocks.GOLD_BLOCK);
+    public static final Block CUT_GOLDEN_SLAB = registerCutSlab("golden", Suppliers.memoize(() -> CUT_GOLD));
+    public static final Block CUT_GOLDEN_STAIRS = registerCutStairs("golden", Suppliers.memoize(() -> CUT_GOLD));
+    public static final Block GOLD_BUTTON = registerButton("gold", BlockSetType.GOLD, 5);
 
     //#endregion
 
@@ -127,6 +135,58 @@ public final class BFDBlocks {
                 .blockVision(Blocks::never)
                 .registryKey(RegistryKeyUtils.block(name));
         return registerBlock(name, Suppliers.memoize(() -> new GrateBlock(settings)));
+    }
+
+    /**
+     * Register a {@link Block Cut Block}
+     *
+     * @param materialName The {@link String Block base material Name}
+     * @param sourceBlock The {@link Block Source Block}
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerCutBlock(final String materialName, final Block sourceBlock) {
+        final String name = "cut_" + materialName;
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.copy(sourceBlock).registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new Block(settings)));
+    }
+
+    /**
+     * Register a {@link Block Chiseled Block}
+     *
+     * @param materialName The {@link String Block base material Name}
+     * @param sourceBlock The {@link Block Source Block}
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerChiseledBlock(final String materialName, final Block sourceBlock) {
+        final String name = "chiseled_" + materialName;
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.copy(sourceBlock).registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new Block(settings)));
+    }
+
+    /**
+     * Register a {@link Block Cut Slab}
+     *
+     * @param materialName The {@link String Block base material Name}
+     * @param sourceBlockSupplier The {@link Supplier<Block> Source Block Supplier}
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerCutSlab(final String materialName, final Supplier<Block> sourceBlockSupplier) {
+        final String name = "cut_" + materialName + "_slab";
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.copy(sourceBlockSupplier.get()).registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new SlabBlock(settings)));
+    }
+
+    /**
+     * Register a {@link Block Cut Stairs}
+     *
+     * @param materialName The {@link String Block base material Name}
+     * @param sourceBlockSupplier The {@link Supplier<Block> Source Block Supplier}
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerCutStairs(final String materialName, final Supplier<Block> sourceBlockSupplier) {
+        final String name = "cut_" + materialName + "_stairs";
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.copy(sourceBlockSupplier.get()).registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new StairsBlock(sourceBlockSupplier.get().getDefaultState(), settings)));
     }
 
     /**

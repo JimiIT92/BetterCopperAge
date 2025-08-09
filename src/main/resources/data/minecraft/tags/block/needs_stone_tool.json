@@ -1,7 +1,11 @@
 {
   "replace": false,
   "values": [
+    "#betterfalldrop:iron_slabs",
+    "#betterfalldrop:iron_stairs",
+    "betterfalldrop:chiseled_iron",
     "betterfalldrop:iron_grate",
-    "betterfalldrop:golden_grate"
+    "betterfalldrop:cut_iron",
+    "betterfalldrop:iron_button"
   ]
 }

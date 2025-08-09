@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "betterfalldrop:cut_iron",
+  "result": {
+    "count": 1,
+    "id": "betterfalldrop:chiseled_iron"
+  }
+}
