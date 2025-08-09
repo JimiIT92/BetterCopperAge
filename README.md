@@ -52,11 +52,30 @@ would do (except that you'll need fewer items to reach power level 15).
 
 <img src="./.docs/medium_weighted_pressure_plates.png" alt="Medium Weighted Pressure Plates" />
 
+Like copper buttons, these will stay pressed longer based on their oxidation level (starting at 20 ticks, 
+like regular pressure plates, going up to 50).
+
+Also like copper buttons, if they are pressed while oxidizing, waxing or scraping, their power level will be reset.
+
 #### CRAFTABLE COPPER GOLEM STATUES
 
 Can't wait to have your Copper Golem statue? No problem! You can now craft them using a carved pumpkin and a Copper Block.
 
 <img src="./.docs/craftable_copper_golem_statue.png" alt="Craftable Copper Golem Statue" />
+
+### IRON AND GOLD DECORATIVE BLOCKS
+
+This new drop adds a ton of decorative blocks for Copper. So, why not give Iron and Gold the same treatment?
+
+New Decorative Blocks for Iron and Gold has been added, putting them in parity with Copper!
+
+Here's what's new:
+- Iron Grate
+  - Crafted with 4 Iron Blocks, like a Copper Grate. Can be waterlogged
+- Golden Grate
+  - Crafted with 4 Gold Blocks, like a Copper Grate. Can be waterlogged
+
+<img src="./.docs/iron_and_gold_decorative_blocks.png" alt="Iron and Gold Decorative Blocks" />
 
 -------------------------
 

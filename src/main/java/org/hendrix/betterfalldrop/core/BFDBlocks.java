@@ -10,9 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import org.hendrix.betterfalldrop.BetterFallDrop;
-import org.hendrix.betterfalldrop.block.CopperButtonBlock;
-import org.hendrix.betterfalldrop.block.CopperFireBlock;
-import org.hendrix.betterfalldrop.block.MediumWeightedPressurePlateBlock;
+import org.hendrix.betterfalldrop.block.*;
 import org.hendrix.betterfalldrop.utils.BlockUtils;
 import org.hendrix.betterfalldrop.utils.IdentifierUtils;
 import org.hendrix.betterfalldrop.utils.RegistryKeyUtils;
@@ -48,6 +46,9 @@ public final class BFDBlocks {
 
     public static final Block COPPER_FIRE = registerCopperFire();
 
+    public static final Block IRON_GRATE = registerGrate("iron", MapColor.IRON_GRAY, BlockSoundGroup.IRON);
+    public static final Block GOLDEN_GRATE = registerGrate("golden", MapColor.GOLD, BlockSoundGroup.METAL);
+
     //#endregion
 
     /**
@@ -60,7 +61,7 @@ public final class BFDBlocks {
     private static Block registerCopperButton(final Oxidizable.OxidationLevel oxidationLevel, final boolean isWaxed) {
         final String name = BlockUtils.copperBlockName(oxidationLevel, isWaxed, "button");
         final AbstractBlock.Settings settings = AbstractBlock.Settings.create().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
-        return registerBlock(name, Suppliers.memoize(() -> new CopperButtonBlock(oxidationLevel, isWaxed, settings)));
+        return registerBlock(name, Suppliers.memoize(() -> isWaxed ? new CopperButtonBlock(oxidationLevel, settings) : new OxidizableCopperButtonBlock(oxidationLevel, settings)));
     }
 
     /**
@@ -73,7 +74,7 @@ public final class BFDBlocks {
     private static Block registerCopperPressurePlate(final Oxidizable.OxidationLevel oxidationLevel, final boolean isWaxed) {
         final String name = BlockUtils.oxidizableBlockName(oxidationLevel, isWaxed, "medium_weighted", "pressure_plate");
         final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(BlockUtils.oxidizableMapColor(oxidationLevel)).solid().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
-        return registerBlock(name, Suppliers.memoize(() -> new MediumWeightedPressurePlateBlock(oxidationLevel, isWaxed, settings)));
+        return registerBlock(name, Suppliers.memoize(() -> isWaxed ? new MediumWeightedPressurePlateBlock(oxidationLevel, settings) : new OxidizableMediumWeightedPressurePlateBlock(oxidationLevel, settings)));
     }
 
     /**
@@ -85,6 +86,30 @@ public final class BFDBlocks {
         final String name = "copper_fire";
         final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(MapColor.EMERALD_GREEN).replaceable().noCollision().breakInstantly().luminance((state) -> 13).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
         return registerBlockWithoutBlockItem(name, Suppliers.memoize(() -> new CopperFireBlock(settings)));
+    }
+
+    /**
+     * Register a {@link GrateBlock Grate Block}
+     *
+     * @param materialName The {@link String Block base material Name}
+     * @param mapColor The {@link MapColor Block Map Color}
+     * @param soundGroup The {@link BlockSoundGroup Block Sound Group}
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerGrate(final String materialName, final MapColor mapColor, final BlockSoundGroup soundGroup) {
+        final String name = materialName + "_grate";
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create()
+                .strength(3.0F, 6.0F)
+                .sounds(soundGroup)
+                .mapColor(mapColor)
+                .nonOpaque()
+                .requiresTool()
+                .allowsSpawning(Blocks::never)
+                .solidBlock(Blocks::never)
+                .suffocates(Blocks::never)
+                .blockVision(Blocks::never)
+                .registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new GrateBlock(settings)));
     }
 
     /**

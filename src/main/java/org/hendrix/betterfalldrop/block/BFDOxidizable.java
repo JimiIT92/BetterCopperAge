@@ -149,7 +149,7 @@ public interface BFDOxidizable extends Oxidizable {
      *
      * @return {@link Boolean True if the Block is being waxed or un-waxed}
      */
-    default Boolean shouldResetPoweredState(final Boolean isWaxed, final BlockState state, final BlockState oldState) {
+    static Boolean shouldResetPoweredState(final Boolean isWaxed, final BlockState state, final BlockState oldState) {
         return isBeingWaxed(isWaxed, state, oldState) || isBeingUnwaxed(isWaxed, state, oldState);
     }
 
@@ -162,7 +162,7 @@ public interface BFDOxidizable extends Oxidizable {
      *
      * @return {@link Boolean True if the Block is being waxed}
      */
-    default Boolean isBeingWaxed(final boolean isWaxed, final BlockState state, final BlockState oldState) {
+    static Boolean isBeingWaxed(final boolean isWaxed, final BlockState state, final BlockState oldState) {
         return isWaxed && isOxidizableBlock(oldState) && isWaxedCopperBlock(state);
     }
 
@@ -175,7 +175,7 @@ public interface BFDOxidizable extends Oxidizable {
      *
      * @return {@link Boolean True if the Block is being un-waxed}
      */
-    default boolean isBeingUnwaxed(final boolean isWaxed, final BlockState state, final BlockState oldState) {
+    static boolean isBeingUnwaxed(final boolean isWaxed, final BlockState state, final BlockState oldState) {
         return !isWaxed && isOxidizableBlock(state) && isWaxedCopperBlock(oldState);
     }
 

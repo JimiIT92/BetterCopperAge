@@ -16,5 +16,7 @@
   "block.betterfalldrop.waxed_exposed_medium_weighted_pressure_plate": "Waxed Exposed Medium Weighted Pressure Plate",
   "block.betterfalldrop.waxed_weathered_medium_weighted_pressure_plate": "Waxed Weathered Medium Weighted Pressure Plate",
   "block.betterfalldrop.waxed_oxidized_medium_weighted_pressure_plate": "Waxed Oxidized Medium Weighted Pressure Plate",
-  "block.betterfalldrop.copper_fire": "Copper Fire"
+  "block.betterfalldrop.copper_fire": "Copper Fire",
+  "block.betterfalldrop.iron_grate": "Iron Grate",
+  "block.betterfalldrop.golden_grate": "Golden Grate"
 }

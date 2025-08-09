@@ -21,7 +21,9 @@ public final class BetterFallDropClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.putBlocks(
                 BlockRenderLayer.CUTOUT,
-                BFDBlocks.COPPER_FIRE
+                BFDBlocks.COPPER_FIRE,
+                BFDBlocks.IRON_GRATE,
+                BFDBlocks.GOLDEN_GRATE
         );
     }
 }
