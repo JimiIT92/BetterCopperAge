@@ -23,7 +23,9 @@ public final class BetterFallDropClient implements ClientModInitializer {
                 BlockRenderLayer.CUTOUT,
                 BFDBlocks.COPPER_FIRE,
                 BFDBlocks.IRON_GRATE,
-                BFDBlocks.GOLDEN_GRATE
+                BFDBlocks.GOLDEN_GRATE,
+                BFDBlocks.GOLDEN_BARS,
+                BFDBlocks.GOLDEN_CHAIN
         );
     }
 }

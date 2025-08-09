@@ -58,6 +58,8 @@ public final class BFDBlocks {
     public static final Block CUT_GOLD = registerCutBlock("gold", Blocks.GOLD_BLOCK);
     public static final Block CUT_GOLDEN_SLAB = registerCutSlab("golden", Suppliers.memoize(() -> CUT_GOLD));
     public static final Block CUT_GOLDEN_STAIRS = registerCutStairs("golden", Suppliers.memoize(() -> CUT_GOLD));
+    public static final Block GOLDEN_BARS = registerGoldenBars();
+    public static final Block GOLDEN_CHAIN = registerGoldenChain();
     public static final Block GOLD_BUTTON = registerButton("gold", BlockSetType.GOLD, 5);
 
     //#endregion
@@ -187,6 +189,28 @@ public final class BFDBlocks {
         final String name = "cut_" + materialName + "_stairs";
         final AbstractBlock.Settings settings = AbstractBlock.Settings.copy(sourceBlockSupplier.get()).registryKey(RegistryKeyUtils.block(name));
         return registerBlock(name, Suppliers.memoize(() -> new StairsBlock(sourceBlockSupplier.get().getDefaultState(), settings)));
+    }
+
+    /**
+     * Register the {@link Block Golden Bars}
+     *
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerGoldenBars() {
+        final String name = "golden_bars";
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL).nonOpaque().registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new PaneBlock(settings)));
+    }
+
+    /**
+     * Register the {@link Block Golden Chain}
+     *
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerGoldenChain() {
+        final String name = "golden_chain";
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().solid().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.CHAIN).nonOpaque().registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new ChainBlock(settings)));
     }
 
     /**

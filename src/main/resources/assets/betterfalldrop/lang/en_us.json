@@ -17,16 +17,18 @@
   "block.betterfalldrop.waxed_weathered_medium_weighted_pressure_plate": "Waxed Weathered Medium Weighted Pressure Plate",
   "block.betterfalldrop.waxed_oxidized_medium_weighted_pressure_plate": "Waxed Oxidized Medium Weighted Pressure Plate",
   "block.betterfalldrop.copper_fire": "Copper Fire",
-  "block.betterfalldrop.iron_button": "Iron Button",
+  "block.betterfalldrop.chiseled_iron": "Chiseled Iron",
   "block.betterfalldrop.iron_grate": "Iron Grate",
   "block.betterfalldrop.cut_iron": "Cut Iron",
   "block.betterfalldrop.cut_iron_slab": "Cut Iron Slab",
   "block.betterfalldrop.cut_iron_stairs": "Cut Iron Stairs",
-  "block.betterfalldrop.chiseled_iron": "Chiseled Iron",
-  "block.betterfalldrop.gold_button": "Gold Button",
+  "block.betterfalldrop.iron_button": "Iron Button",
+  "block.betterfalldrop.chiseled_gold": "Chiseled Gold",
   "block.betterfalldrop.golden_grate": "Golden Grate",
   "block.betterfalldrop.cut_gold": "Cut Gold",
   "block.betterfalldrop.cut_golden_slab": "Cut Golden Slab",
   "block.betterfalldrop.cut_golden_stairs": "Cut Golden Stairs",
-  "block.betterfalldrop.chiseled_gold": "Chiseled Gold"
+  "block.betterfalldrop.golden_bars": "Golden Bars",
+  "block.betterfalldrop.golden_chain": "Golden Chain",
+  "block.betterfalldrop.gold_button": "Gold Button"
 }

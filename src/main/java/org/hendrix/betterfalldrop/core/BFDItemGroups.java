@@ -52,6 +52,8 @@ public final class BFDItemGroups {
                         entries.add(BFDBlocks.CUT_GOLD);
                         entries.add(BFDBlocks.CUT_GOLDEN_SLAB);
                         entries.add(BFDBlocks.CUT_GOLDEN_STAIRS);
+                        entries.add(BFDBlocks.GOLDEN_BARS);
+                        entries.add(BFDBlocks.GOLDEN_CHAIN);
                         entries.add(BFDBlocks.GOLD_BUTTON);
                     })
                     .build()
