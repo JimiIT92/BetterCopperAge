@@ -41,7 +41,9 @@ public final class BFDItemGroups {
                         entries.add(BFDBlocks.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
                         entries.add(BFDBlocks.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
                         entries.add(BFDBlocks.WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+                        entries.add(BFDBlocks.IRON_BUTTON);
                         entries.add(BFDBlocks.IRON_GRATE);
+                        entries.add(BFDBlocks.GOLD_BUTTON);
                         entries.add(BFDBlocks.GOLDEN_GRATE);
                     })
                     .build()

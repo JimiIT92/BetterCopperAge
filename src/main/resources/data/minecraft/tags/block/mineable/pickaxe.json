@@ -3,7 +3,9 @@
   "values": [
     "#betterfalldrop:copper_buttons",
     "#betterfalldrop:medium_weighted_pressure_plates",
+    "betterfalldrop:iron_button",
     "betterfalldrop:iron_grate",
+    "betterfalldrop:gold_button",
     "betterfalldrop:golden_grate"
   ]
 }

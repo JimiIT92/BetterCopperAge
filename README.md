@@ -70,8 +70,12 @@ This new drop adds a ton of decorative blocks for Copper. So, why not give Iron 
 New Decorative Blocks for Iron and Gold has been added, putting them in parity with Copper!
 
 Here's what's new:
+- Iron Button
+  - Crafted with an Iron Block through the Stonecutter. Stay pressed for 15 ticks (in between wooden and stone buttons)
 - Iron Grate
   - Crafted with 4 Iron Blocks, like a Copper Grate. Can be waterlogged
+- Gold Button
+  - Crafted with a Gold Block through the Stonecutter. Stay pressed for 5 ticks (lower than wooden buttons)
 - Golden Grate
   - Crafted with 4 Gold Blocks, like a Copper Grate. Can be waterlogged
 

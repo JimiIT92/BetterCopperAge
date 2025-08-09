@@ -46,7 +46,10 @@ public final class BFDBlocks {
 
     public static final Block COPPER_FIRE = registerCopperFire();
 
+    public static final Block IRON_BUTTON = registerButton("iron", BlockSetType.IRON, 15);
     public static final Block IRON_GRATE = registerGrate("iron", MapColor.IRON_GRAY, BlockSoundGroup.IRON);
+
+    public static final Block GOLD_BUTTON = registerButton("gold", BlockSetType.GOLD, 5);
     public static final Block GOLDEN_GRATE = registerGrate("golden", MapColor.GOLD, BlockSoundGroup.METAL);
 
     //#endregion
@@ -60,7 +63,7 @@ public final class BFDBlocks {
      */
     private static Block registerCopperButton(final Oxidizable.OxidationLevel oxidationLevel, final boolean isWaxed) {
         final String name = BlockUtils.copperBlockName(oxidationLevel, isWaxed, "button");
-        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
+        final AbstractBlock.Settings settings = buttonSettings(name);
         return registerBlock(name, Suppliers.memoize(() -> isWaxed ? new CopperButtonBlock(oxidationLevel, settings) : new OxidizableCopperButtonBlock(oxidationLevel, settings)));
     }
 
@@ -89,6 +92,20 @@ public final class BFDBlocks {
     }
 
     /**
+     * Register a {@link Block Button}
+     *
+     * @param materialName The {@link String Block base material Name}
+     * @param blockSetType The {@link BlockSetType Block Set Type}
+     * @param pressTicks The {@link Integer Button Press Ticks}
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerButton(final String materialName, final BlockSetType blockSetType, final int pressTicks) {
+        final String name = materialName + "_button";
+        final AbstractBlock.Settings settings = buttonSettings(name);
+        return registerBlock(name, Suppliers.memoize(() -> new ButtonBlock(blockSetType, pressTicks, settings)));
+    }
+
+    /**
      * Register a {@link GrateBlock Grate Block}
      *
      * @param materialName The {@link String Block base material Name}
@@ -110,6 +127,16 @@ public final class BFDBlocks {
                 .blockVision(Blocks::never)
                 .registryKey(RegistryKeyUtils.block(name));
         return registerBlock(name, Suppliers.memoize(() -> new GrateBlock(settings)));
+    }
+
+    /**
+     * Get the {@link AbstractBlock.Settings Block Settings} for a {@link ButtonBlock Button Block}
+     *
+     * @param name The {@link String Block Name}
+     * @return The {@link AbstractBlock.Settings Block Settings}
+     */
+    private static AbstractBlock.Settings buttonSettings(final String name) {
+        return AbstractBlock.Settings.create().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
     }
 
     /**
