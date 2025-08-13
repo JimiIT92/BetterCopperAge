@@ -61,6 +61,8 @@ public final class BFDBlocks {
     public static final Block GOLDEN_BARS = registerGoldenBars();
     public static final Block GOLDEN_CHAIN = registerGoldenChain();
     public static final Block GOLD_BUTTON = registerButton("gold", BlockSetType.GOLD, 5);
+    public static final Block GOLDEN_DOOR = registerGoldenDoor();
+    public static final Block GOLDEN_TRAPDOOR = registerGoldenTrapdoor();
 
     //#endregion
 
@@ -211,6 +213,28 @@ public final class BFDBlocks {
         final String name = "golden_chain";
         final AbstractBlock.Settings settings = AbstractBlock.Settings.create().solid().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.CHAIN).nonOpaque().registryKey(RegistryKeyUtils.block(name));
         return registerBlock(name, Suppliers.memoize(() -> new ChainBlock(settings)));
+    }
+
+    /**
+     * Register the {@link Block Golden Door}
+     *
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerGoldenDoor() {
+        final String name = "golden_door";
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(MapColor.GOLD).strength(5.0F).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new DoorBlock(BlockSetType.GOLD, settings)));
+    }
+
+    /**
+     * Register the {@link Block Golden Trapdoor}
+     *
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerGoldenTrapdoor() {
+        final String name = "golden_trapdoor";
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(MapColor.GOLD).requiresTool().strength(5.0F).nonOpaque().allowsSpawning(Blocks::never).registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new TrapdoorBlock(BlockSetType.GOLD, settings)));
     }
 
     /**

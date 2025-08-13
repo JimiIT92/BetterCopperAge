@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#betterfalldrop:iron_slabs",
-    "#betterfalldrop:golden_slabs"
+    "betterfalldrop:cut_iron_slab",
+    "betterfalldrop:cut_golden_slab"
   ]
 }

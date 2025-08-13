@@ -30,5 +30,7 @@
   "block.betterfalldrop.cut_golden_stairs": "Cut Golden Stairs",
   "block.betterfalldrop.golden_bars": "Golden Bars",
   "block.betterfalldrop.golden_chain": "Golden Chain",
-  "block.betterfalldrop.gold_button": "Gold Button"
+  "block.betterfalldrop.gold_button": "Gold Button",
+  "block.betterfalldrop.golden_door": "Golden Door",
+  "block.betterfalldrop.golden_trapdoor": "Golden Trapdoor"
 }
