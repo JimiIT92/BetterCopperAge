@@ -63,6 +63,7 @@ public final class BFDBlocks {
     public static final Block GOLD_BUTTON = registerButton("gold", BlockSetType.GOLD, 5);
     public static final Block GOLDEN_DOOR = registerGoldenDoor();
     public static final Block GOLDEN_TRAPDOOR = registerGoldenTrapdoor();
+    public static final Block GOLDEN_LANTERN = registerGoldenLantern();
 
     //#endregion
 
@@ -235,6 +236,25 @@ public final class BFDBlocks {
         final String name = "golden_trapdoor";
         final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(MapColor.GOLD).requiresTool().strength(5.0F).nonOpaque().allowsSpawning(Blocks::never).registryKey(RegistryKeyUtils.block(name));
         return registerBlock(name, Suppliers.memoize(() -> new TrapdoorBlock(BlockSetType.GOLD, settings)));
+    }
+
+    /**
+     * Register the {@link Block Golden Lantern}
+     *
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerGoldenLantern() {
+        final String name = "golden_lantern";
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create()
+                .mapColor(MapColor.GOLD)
+                .solid()
+                .strength(5.0F)
+                .sounds(BlockSoundGroup.LANTERN)
+                .luminance((blockState) -> 15)
+                .nonOpaque()
+                .pistonBehavior(PistonBehavior.DESTROY)
+                .registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new LanternBlock(settings)));
     }
 
     /**

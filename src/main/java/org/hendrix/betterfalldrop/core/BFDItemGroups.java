@@ -57,6 +57,7 @@ public final class BFDItemGroups {
                         entries.add(BFDBlocks.GOLD_BUTTON);
                         entries.add(BFDBlocks.GOLDEN_DOOR);
                         entries.add(BFDBlocks.GOLDEN_TRAPDOOR);
+                        entries.add(BFDBlocks.GOLDEN_LANTERN);
                     })
                     .build()
     );

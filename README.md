@@ -19,7 +19,7 @@ This new Green Flame can be obtained if a Copper Block is set on fire.
 
 <img src="./.docs/copper_fire.png" alt="Copper Fire" />
 
-Provides a light level of 13 and deals 1.5x fire damage
+Emits a light level of 13 and deals 1.5x fire damage
 
 ### COPPER BUTTONS
 
@@ -70,16 +70,37 @@ This new drop adds a ton of decorative blocks for Copper. So, why not give Iron 
 New Decorative Blocks for Iron and Gold has been added, putting them in parity with Copper!
 
 Here's what's new:
-- Iron Button
-  - Crafted with an Iron Block through the Stonecutter. Stay pressed for 15 ticks (in between wooden and stone buttons)
+- Cut Iron
+  - Crafted with 4 Iron Blocks or with an Iron Block through the Stonecutter
+  - Can be turned into Cut Iron Slabs and Stairs
+- Chiseled Iron
+  - Crafted with 2 Cut Iron Slabs or with an Iron Block through the Stonecutter
 - Iron Grate
   - Crafted with 4 Iron Blocks, like a Copper Grate. Can be waterlogged
-- Gold Button
-  - Crafted with a Gold Block through the Stonecutter. Stay pressed for 5 ticks (lower than wooden buttons)
+- Iron Button
+  - Crafted with an Iron Block through the Stonecutter. Stay pressed for 15 ticks (in between wooden and stone buttons)
+- Cut Gold
+  - Crafted with 4 Gold Blocks or with a Gold Block through the Stonecutter
+  - Can be turned into Cut Gold Slabs and Stairs
+- Chiseled Gold
+  - Crafted with 2 Cut Gold Slabs or with a Gold Block through the Stonecutter
 - Golden Grate
   - Crafted with 4 Gold Blocks, like a Copper Grate. Can be waterlogged
+- Gold Button
+  - Crafted with a Gold Block through the Stonecutter. Stay pressed for 5 ticks (lower than wooden buttons)
+- Golden Bars
+  - Crafted with 6 Gold Ingots, like regular Bars. Can be waterlogged
+- Golden Chain
+  - Crafted with 2 Gold Nuggets and a Gold Ingot, like regular Chains. Can be waterlogged
+- Golden Door
+  - Crafted with 6 Gold Ingots, like regular Doors. Can be opened with a redstone signal.
+- Golden Trapdoor
+  - Crafted with 4 Gold Ingots, like Iron or Copper Trapdoors. Can be opened with a redstone signal and can be waterlogged
+- Golden Lantern
+  - Crafted with 8 Gold Nuggets and a Torch, like regular Lanterns. Emits a light level of 15. Can be waterlogged
 
-<img src="./.docs/iron_and_gold_decorative_blocks.png" alt="Iron and Gold Decorative Blocks" />
+<img src="./.docs/iron_decorative_blocks.png" alt="Iron Decorative Blocks" />
+<img src="./.docs/gold_decorative_blocks.png" alt="Gold Decorative Blocks" />
 
 -------------------------
 

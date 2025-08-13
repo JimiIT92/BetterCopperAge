@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "betterfalldrop:block/golden_lantern"
+    },
+    "hanging=true": {
+      "model": "betterfalldrop:block/golden_lantern_hanging"
+    }
+  }
+}
