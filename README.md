@@ -148,6 +148,14 @@ This also means that, using a pair of Shears, you can take the Item back from th
 
 You can find the full list [here](https://github.com/JimiIT92/BetterFallDrop/blob/master/src/main/resources/data/minecraft/tags/item/shearable_from_copper_golem.json)
 
+### COPPER ATTRACTS LIGHTNINGS
+
+If there's a storm, you better not going out with some Copper Armor or let your Copper Golem outside, because
+now a Lightning can strike any Player/Horse wearing some Copper Armor or any Copper Golem, if there are no
+Lightning Rods nearby.
+
+<img src="./.docs/lightning_striking_copper_golem.png" alt="Lightning striking a Copper Golem" />
+
 -------------------------
 
 ### 👨🏼‍💻 How to contribute

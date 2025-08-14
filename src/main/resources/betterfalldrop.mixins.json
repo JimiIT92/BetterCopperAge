@@ -5,6 +5,7 @@
   "mixins": [
     "AbstractFireBlockMixin",
     "AxeItemMixin",
+    "ServerWorldMixin",
     "ShapedRecipeMixin"
   ],
   "injectors": {
