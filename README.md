@@ -21,6 +21,24 @@ This new Green Flame can be obtained if a Copper Block is set on fire.
 
 Emits a light level of 13 and deals 1.5x fire damage
 
+### COPPER HORN AND NEW GOAT HORN SOUNDS
+
+Copper Horn was a scrapped feature from the Caves & Cliffs update, but now is back!
+
+Crafted by surrounding a Goat Horn with 3 Copper Ingots, will return a different Copper Horn based on the Goat Horn used.
+
+They'll produce a different sound based on how they are played:
+- A high-pitched sound if the player is looking straight up
+- A bass sound if the player is sneaking
+- The regular sound otherwise
+
+<img src="./.docs/copper_horn.png" alt="Copper Horn" />
+
+Also, two scrapped Goat Horn sounds has been added, that can also be turned into Copper Horns.
+
+- Fly: dropped from regular Goats
+- Resist: dropped from screaming Goats
+
 ### COPPER BUTTONS
 
 Originally, Copper Golem was designed to interact with Copper Buttons.

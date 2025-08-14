@@ -33,5 +33,18 @@
   "block.betterfalldrop.gold_button": "Gold Button",
   "block.betterfalldrop.golden_door": "Golden Door",
   "block.betterfalldrop.golden_trapdoor": "Golden Trapdoor",
-  "block.betterfalldrop.golden_lantern": "Golden Lantern"
+  "block.betterfalldrop.golden_lantern": "Golden Lantern",
+  "item.betterfalldrop.copper_horn": "Copper Horn",
+  "instrument.betterfalldrop.fly_goat_horn": "Fly",
+  "instrument.betterfalldrop.resist_goat_horn": "Resist",
+  "instrument.betterfalldrop.great_sky_falling_copper_horn": "Great Sky Falling",
+  "instrument.betterfalldrop.old_hymn_resting_copper_horn": "Old Hymn Resting",
+  "instrument.betterfalldrop.pure_water_desire_copper_horn": "Pure Water Desire",
+  "instrument.betterfalldrop.mumble_fire_memory_copper_horn": "Mumble Fire Memory",
+  "instrument.betterfalldrop.dry_urge_anger_copper_horn": "Dry Urge Anger",
+  "instrument.betterfalldrop.clear_temper_journey_copper_horn": "Clear Temper Journey",
+  "instrument.betterfalldrop.fresh_nest_thought_copper_horn": "Fresh Nest Thought",
+  "instrument.betterfalldrop.secret_lake_tear_copper_horn": "Secret Lake Tear",
+  "instrument.betterfalldrop.fearless_river_gift_copper_horn": "Fearless River Gift",
+  "instrument.betterfalldrop.sweet_moon_love_copper_horn": "Sweet Moon Love"
 }

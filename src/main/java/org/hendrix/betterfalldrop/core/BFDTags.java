@@ -1,6 +1,7 @@
 package org.hendrix.betterfalldrop.core;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Instrument;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import org.hendrix.betterfalldrop.BetterFallDrop;
@@ -32,4 +33,30 @@ public final class BFDTags {
             return TagKey.of(RegistryKeys.BLOCK, IdentifierUtils.modIdentifier(name));
         }
     }
+
+    /**
+     * {@link BetterFallDrop Better Fall Drop} {@link TagKey<Instrument> Instrument Tags}
+     */
+    public static class InstrumentTags {
+
+        //#region Tags
+
+        public static final TagKey<Instrument> BASS_COPPER_HORNS = tag("bass_copper_horns");
+        public static final TagKey<Instrument> HARMONY_COPPER_HORNS = tag("harmony_copper_horns");
+        public static final TagKey<Instrument> MELODY_COPPER_HORNS = tag("melody_copper_horns");
+        public static final TagKey<Instrument> COPPER_HORNS = tag("copper_horns");
+
+        //#endregion
+
+        /**
+         * Get a {@link TagKey<Instrument> Instrument Tag}
+         *
+         * @param name The {@link String Tag name}
+         * @return The {@link TagKey<Instrument> Instrument Tag}
+         */
+        private static TagKey<Instrument> tag(final String name) {
+            return TagKey.of(RegistryKeys.INSTRUMENT, IdentifierUtils.modIdentifier(name));
+        }
+    }
+
 }

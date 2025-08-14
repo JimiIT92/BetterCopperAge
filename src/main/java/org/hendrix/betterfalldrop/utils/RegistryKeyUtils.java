@@ -1,6 +1,8 @@
 package org.hendrix.betterfalldrop.utils;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Instrument;
+import net.minecraft.item.Item;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -18,6 +20,26 @@ public final class RegistryKeyUtils {
      */
     public static RegistryKey<Block> block(final String name) {
         return key(RegistryKeys.BLOCK, name);
+    }
+
+    /**
+     * Get the {@link RegistryKey<Item> Registry Key} for an {@link Item Item}
+     *
+     * @param name The {@link String Item name}
+     * @return The {@link RegistryKey<Item> Item Registry Key}
+     */
+    public static RegistryKey<Item> item(final String name) {
+        return key(RegistryKeys.ITEM, name);
+    }
+
+    /**
+     * Get the {@link RegistryKey<Instrument> Registry Key} for a {@link Instrument Instrument}
+     *
+     * @param name The {@link String Instrument name}
+     * @return The {@link RegistryKey<Instrument> Instrument Registry Key}
+     */
+    public static RegistryKey<Instrument> instrument(final String name) {
+        return key(RegistryKeys.INSTRUMENT, name);
     }
 
     /**
