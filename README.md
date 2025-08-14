@@ -129,6 +129,25 @@ That's why, if you now Shift-Right Click a shelf, it will toggle its display mod
 
 <img src="./.docs/shelf_display_mode_toggle.gif" alt="Shelf Display Mode Toggled" />
 
+### PUT ITEMS ON COPPER GOLEMS
+
+Iron Golems will sometimes place a Poppy on top of a Copper Golem.
+
+But what if you don't want to wait for this event? Or, even better, you want to put
+other type of items on it?
+
+Well, now you can! You can now put a broader variety of Items and Blocks on top of a Copper Golem
+by simply right-click.
+
+<img src="./.docs/copper_golem_wearing_heavy_core.png" alt="Copper Golem wearing Heavy Core" />
+
+The list is controlled by the `minecraft:shearable_from_copper_golem` tag, which has been expanded
+to include all the Blocks and Items that you can now put on a Copper Golem.
+
+This also means that, using a pair of Shears, you can take the Item back from the Copper Golem.
+
+You can find the full list [here](https://github.com/JimiIT92/BetterFallDrop/blob/master/src/main/resources/data/minecraft/tags/item/shearable_from_copper_golem.json)
+
 -------------------------
 
 ### 👨🏼‍💻 How to contribute
