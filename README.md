@@ -120,6 +120,15 @@ Here's what's new:
 <img src="./.docs/iron_decorative_blocks.png" alt="Iron Decorative Blocks" />
 <img src="./.docs/gold_decorative_blocks.png" alt="Gold Decorative Blocks" />
 
+### BETTER SHELVES
+
+The Shelf is a great Block for building and decorations, and it has two modes of displaying Items. 
+But only one is accessible in Vanilla Minecraft, which is a shame to be honest...
+
+That's why, if you now Shift-Right Click a shelf, it will toggle its display mode!
+
+<img src="./.docs/shelf_display_mode_toggle.gif" alt="Shelf Display Mode Toggled" />
+
 -------------------------
 
 ### 👨🏼‍💻 How to contribute
