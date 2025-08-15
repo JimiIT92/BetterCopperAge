@@ -20,6 +20,7 @@ public final class BFDTags {
         //#region Tags
 
         public static final TagKey<Block> COPPER_FIRE_BASE_BLOCKS = tag("copper_fire_base_blocks");
+        public static final TagKey<Block> COPPER_GOLEM_OUTPUT_CONTAINERS = tag("copper_golem_output_containers");
 
         //#endregion
 

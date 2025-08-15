@@ -84,12 +84,6 @@ like regular pressure plates, going up to 50).
 
 Also like copper buttons, if they are pressed while oxidizing, waxing or scraping, their power level will be reset.
 
-#### CRAFTABLE COPPER GOLEM STATUES
-
-Can't wait to have your Copper Golem statue? No problem! You can now craft them using a carved pumpkin and a Copper Block.
-
-<img src="./.docs/craftable_copper_golem_statue.png" alt="Craftable Copper Golem Statue" />
-
 ### IRON AND GOLD DECORATIVE BLOCKS
 
 This new drop adds a ton of decorative blocks for Copper. So, why not give Iron and Gold the same treatment?
@@ -138,7 +132,18 @@ That's why, if you now Shift-Right Click a shelf, it will toggle its display mod
 
 <img src="./.docs/shelf_display_mode_toggle.gif" alt="Shelf Display Mode Toggled" />
 
-### PUT ITEMS ON COPPER GOLEMS
+### BETTER COPPER GOLEMS
+
+Can't wait to have your Copper Golem statue? No problem! You can now craft them using a carved pumpkin and a Copper Block.
+
+<img src="./.docs/craftable_copper_golem_statue.png" alt="Craftable Copper Golem Statue" />
+
+They'll also now deposit Items in Barrels and Shulker Boxes as well
+
+<img src="./.docs/copper_golem_opening_shulker_box.png" alt="Copper Golem opening a Shulker Box" />
+
+The list of containers that the Copper Golem can deposit Items to is controlled by a new Block tag, 
+`betterfalldrop:copper_golem_output_containers`. You can find the list of supported containers [here](https://github.com/JimiIT92/BetterFallDrop/blob/master/src/main/resources/data/betterfalldrop/tags/block/copper_golem_output_containers.json)
 
 Iron Golems will sometimes place a Poppy on top of a Copper Golem.
 

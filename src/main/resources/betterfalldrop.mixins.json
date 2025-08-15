@@ -5,6 +5,7 @@
   "mixins": [
     "AbstractFireBlockMixin",
     "AxeItemMixin",
+    "CopperGolemBrainMixin",
     "LightningEntityMixin",
     "ServerWorldMixin",
     "ShapedRecipeMixin"
