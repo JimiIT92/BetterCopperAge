@@ -39,7 +39,7 @@ public final class BFDEvents {
     private static ActionResult toggleShelfState(final PlayerEntity player, final World world, final Hand hand, final BlockHitResult blockHitResult) {
         final BlockPos blockPos = blockHitResult.getBlockPos();
         final BlockState blockState = world.getBlockState(blockPos);
-        if(player.isSneaking() && blockState.getBlock() instanceof ShelfBlock && blockState.contains(ShelfBlock.field_61997)) {
+        if(player.isSneaking() && player.getStackInHand(hand).isEmpty() && blockState.getBlock() instanceof ShelfBlock && blockState.contains(ShelfBlock.field_61997)) {
             world.setBlockState(blockPos, blockState.with(ShelfBlock.field_61997, !blockState.get(ShelfBlock.field_61997)));
             world.playSound(player, blockPos, SoundEvents.BLOCK_SHELF_PLACE_ITEM, SoundCategory.BLOCKS);
             return ActionResult.SUCCESS;
@@ -66,7 +66,9 @@ public final class BFDEvents {
             if(itemStack.isIn(ItemTags.SHEARABLE_FROM_COPPER_GOLEM) && equippedStack.isEmpty()) {
                 copperGolemEntity.equipStack(EquipmentSlot.HEAD, itemStack);
                 copperGolemEntity.setEquipmentDropChance(EquipmentSlot.HEAD, 1.0F);
-                player.setStackInHand(hand, ItemStack.EMPTY);
+                if(!player.isInCreativeMode()) {
+                    player.setStackInHand(hand, ItemStack.EMPTY);
+                }
                 world.playSound(player, copperGolemEntity.getBlockPos(), SoundEvents.BLOCK_COPPER_GOLEM_STATUE_PLACE, SoundCategory.NEUTRAL);
                 return ActionResult.SUCCESS;
             }

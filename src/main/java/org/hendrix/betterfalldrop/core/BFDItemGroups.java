@@ -76,7 +76,8 @@ public final class BFDItemGroups {
                 BFDBlocks.GOLD_BUTTON,
                 BFDBlocks.GOLDEN_DOOR,
                 BFDBlocks.GOLDEN_TRAPDOOR,
-                BFDBlocks.GOLDEN_LANTERN
+                BFDBlocks.GOLDEN_LANTERN,
+                BFDItems.WRENCH
         );
         addGoatHorns();
         addCopperHorns();

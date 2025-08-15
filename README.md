@@ -86,6 +86,20 @@ like regular pressure plates, going up to 50).
 
 Also like copper buttons, if they are pressed while oxidizing, waxing or scraping, their power level will be reset.
 
+### WRENCH
+
+Using 2 Iron Ingots and 2 Copper Ingots you can craft a new tool: the Wrench!
+
+<img src="./.docs/wrench_crafting.png" alt="Wrench Crafting" />
+
+With the wrench you can now rotate any Block that can be rotated without the need to break and place them again.
+
+Right-click the Block with the Wrench to cycle the different orientations (for Blocks that can be interacted, you need to press Shift as well)
+
+<img src="./.docs/wrench.gif" alt="Player using a Wrench" />
+
+It has 512 uses
+
 ### IRON AND GOLD DECORATIVE BLOCKS
 
 This new drop adds a ton of decorative blocks for Copper. So, why not give Iron and Gold the same treatment?
@@ -130,7 +144,7 @@ Here's what's new:
 The Shelf is a great Block for building and decorations, and it has two modes of displaying Items. 
 But only one is accessible in Vanilla Minecraft, which is a shame to be honest...
 
-That's why, if you now Shift-Right Click a shelf, it will toggle its display mode!
+That's why, if you now Shift-Right Click a shelf with an empty hand, it will toggle its display mode!
 
 <img src="./.docs/shelf_display_mode_toggle.gif" alt="Shelf Display Mode Toggled" />
 

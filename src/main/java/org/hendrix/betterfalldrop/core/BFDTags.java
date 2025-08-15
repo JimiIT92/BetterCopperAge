@@ -21,6 +21,7 @@ public final class BFDTags {
 
         public static final TagKey<Block> COPPER_FIRE_BASE_BLOCKS = tag("copper_fire_base_blocks");
         public static final TagKey<Block> COPPER_GOLEM_OUTPUT_CONTAINERS = tag("copper_golem_output_containers");
+        public static final TagKey<Block> INVALID_FOR_WRENCH = tag("invalid_for_wrench");
 
         //#endregion
 

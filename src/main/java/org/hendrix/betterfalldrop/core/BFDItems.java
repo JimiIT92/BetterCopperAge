@@ -12,6 +12,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import org.hendrix.betterfalldrop.BetterFallDrop;
 import org.hendrix.betterfalldrop.item.CopperHornItem;
+import org.hendrix.betterfalldrop.item.WrenchItem;
 import org.hendrix.betterfalldrop.utils.IdentifierUtils;
 import org.hendrix.betterfalldrop.utils.RegistryKeyUtils;
 
@@ -27,6 +28,7 @@ public final class BFDItems {
     public static final Item COPPER_HORN = registerItem("copper_horn", Suppliers.memoize(() -> new CopperHornItem(
             new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON).useItemPrefixedTranslationKey().registryKey(RegistryKeyUtils.item("copper_horn"))))
     );
+    public static final Item WRENCH = registerItem("wrench", Suppliers.memoize(() -> new WrenchItem(new Item.Settings().maxDamage(512).useItemPrefixedTranslationKey().registryKey(RegistryKeyUtils.item("wrench")))));
 
     //#endregion
 
