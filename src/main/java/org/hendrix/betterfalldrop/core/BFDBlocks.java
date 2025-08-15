@@ -3,6 +3,7 @@ package org.hendrix.betterfalldrop.core;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.HoneycombItem;
 import net.minecraft.registry.Registries;
@@ -45,6 +46,7 @@ public final class BFDBlocks {
     public static final Block WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.OXIDIZED, true);
 
     public static final Block COPPER_FIRE = registerCopperFire();
+    public static final Block COPPER_CAMPFIRE = registerCopperCampfire();
 
     public static final Block CHISELED_IRON = registerChiseledBlock("iron", Blocks.IRON_BLOCK);
     public static final Block IRON_GRATE = registerGrate("iron", MapColor.IRON_GRAY, BlockSoundGroup.IRON);
@@ -100,8 +102,27 @@ public final class BFDBlocks {
      */
     private static Block registerCopperFire() {
         final String name = "copper_fire";
-        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(MapColor.EMERALD_GREEN).replaceable().noCollision().breakInstantly().luminance((state) -> 13).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(MapColor.EMERALD_GREEN).replaceable().noCollision().breakInstantly().luminance(state -> 13).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
         return registerBlockWithoutBlockItem(name, Suppliers.memoize(() -> new CopperFireBlock(settings)));
+    }
+
+    /**
+     * Register the {@link CampfireBlock Copper Campfire Block}
+     *
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerCopperCampfire() {
+        final String name = "copper_campfire";
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create()
+                .mapColor(MapColor.SPRUCE_BROWN)
+                .instrument(NoteBlockInstrument.BASS)
+                .strength(2.0F)
+                .sounds(BlockSoundGroup.WOOD)
+                .luminance(Blocks.createLightLevelFromLitBlockState(13))
+                .nonOpaque()
+                .burnable()
+                .registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> new CopperCampfireBlock(settings)));
     }
 
     /**
@@ -250,7 +271,7 @@ public final class BFDBlocks {
                 .solid()
                 .strength(5.0F)
                 .sounds(BlockSoundGroup.LANTERN)
-                .luminance((blockState) -> 15)
+                .luminance(state -> 15)
                 .nonOpaque()
                 .pistonBehavior(PistonBehavior.DESTROY)
                 .registryKey(RegistryKeyUtils.block(name));

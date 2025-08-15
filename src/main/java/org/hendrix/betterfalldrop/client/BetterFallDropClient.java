@@ -5,7 +5,10 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.BlockRenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.block.entity.CampfireBlockEntityRenderer;
 import org.hendrix.betterfalldrop.BetterFallDrop;
+import org.hendrix.betterfalldrop.core.BFDBlockEntityTypes;
 import org.hendrix.betterfalldrop.core.BFDBlocks;
 
 /**
@@ -22,11 +25,13 @@ public final class BetterFallDropClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlocks(
                 BlockRenderLayer.CUTOUT,
                 BFDBlocks.COPPER_FIRE,
+                BFDBlocks.COPPER_CAMPFIRE,
                 BFDBlocks.IRON_GRATE,
                 BFDBlocks.GOLDEN_GRATE,
                 BFDBlocks.GOLDEN_BARS,
                 BFDBlocks.GOLDEN_CHAIN,
                 BFDBlocks.GOLDEN_LANTERN
         );
+        BlockEntityRendererFactories.register(BFDBlockEntityTypes.CAMPFIRE, CampfireBlockEntityRenderer::new);
     }
 }

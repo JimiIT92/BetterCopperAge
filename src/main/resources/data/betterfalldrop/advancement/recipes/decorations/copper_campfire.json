@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_copper_fire_base_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#betterfalldrop:copper_fire_base_blocks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "betterfalldrop:copper_campfire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_copper_fire_base_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "betterfalldrop:copper_campfire"
+    ]
+  }
+}

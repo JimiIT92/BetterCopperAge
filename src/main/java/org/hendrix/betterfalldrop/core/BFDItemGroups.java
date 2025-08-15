@@ -33,41 +33,6 @@ public final class BFDItemGroups {
             FabricItemGroup.builder()
                     .icon(Suppliers.memoize(() -> new ItemStack(Blocks.COPPER_GOLEM_STATUE)))
                     .displayName(Text.translatable("itemgroup." + BetterFallDrop.MOD_ID + "." + BetterFallDrop.MOD_ID))
-                    /*.entries((displayContext, entries) -> {
-                        entries.add(BFDBlocks.COPPER_BUTTON);
-                        entries.add(BFDBlocks.EXPOSED_COPPER_BUTTON);
-                        entries.add(BFDBlocks.WEATHERED_COPPER_BUTTON);
-                        entries.add(BFDBlocks.OXIDIZED_COPPER_BUTTON);
-                        entries.add(BFDBlocks.WAXED_COPPER_BUTTON);
-                        entries.add(BFDBlocks.WAXED_EXPOSED_COPPER_BUTTON);
-                        entries.add(BFDBlocks.WAXED_WEATHERED_COPPER_BUTTON);
-                        entries.add(BFDBlocks.WAXED_OXIDIZED_COPPER_BUTTON);
-                        entries.add(BFDBlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE);
-                        entries.add(BFDBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-                        entries.add(BFDBlocks.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-                        entries.add(BFDBlocks.OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-                        entries.add(BFDBlocks.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-                        entries.add(BFDBlocks.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-                        entries.add(BFDBlocks.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-                        entries.add(BFDBlocks.WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-                        entries.add(BFDBlocks.CHISELED_IRON);
-                        entries.add(BFDBlocks.IRON_GRATE);
-                        entries.add(BFDBlocks.CUT_IRON);
-                        entries.add(BFDBlocks.CUT_IRON_SLAB);
-                        entries.add(BFDBlocks.CUT_IRON_STAIRS);
-                        entries.add(BFDBlocks.IRON_BUTTON);
-                        entries.add(BFDBlocks.CHISELED_GOLD);
-                        entries.add(BFDBlocks.GOLDEN_GRATE);
-                        entries.add(BFDBlocks.CUT_GOLD);
-                        entries.add(BFDBlocks.CUT_GOLDEN_SLAB);
-                        entries.add(BFDBlocks.CUT_GOLDEN_STAIRS);
-                        entries.add(BFDBlocks.GOLDEN_BARS);
-                        entries.add(BFDBlocks.GOLDEN_CHAIN);
-                        entries.add(BFDBlocks.GOLD_BUTTON);
-                        entries.add(BFDBlocks.GOLDEN_DOOR);
-                        entries.add(BFDBlocks.GOLDEN_TRAPDOOR);
-                        entries.add(BFDBlocks.GOLDEN_LANTERN);
-                    })*/
                     .build()
     );
 
@@ -94,6 +59,7 @@ public final class BFDItemGroups {
                 BFDBlocks.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
                 BFDBlocks.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
                 BFDBlocks.WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
+                BFDBlocks.COPPER_CAMPFIRE,
                 BFDBlocks.CHISELED_IRON,
                 BFDBlocks.IRON_GRATE,
                 BFDBlocks.CUT_IRON,

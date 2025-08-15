@@ -11,7 +11,7 @@ Make Copper Golems interact with Copper Buttons, like originally intended, and b
 
 ### 🤖 Features
 
-### COPPER FIRE
+### COPPER FIRE AND CAMPFIRE
 
 What happens if you mix Copper and Fire? You get Copper Fire!
 
@@ -20,6 +20,15 @@ This new Green Flame can be obtained if a Copper Block is set on fire.
 <img src="./.docs/copper_fire.png" alt="Copper Fire" />
 
 Emits a light level of 13 and deals 1.5x fire damage
+
+And, since there is Copper Fire, there's now also the Copper Campfire!
+
+<img src="./.docs/copper_campfire.png" alt="Copper Campfire" />
+
+Crafted like a Soul Campfire, but using any Block that can produce Copper Fire in the middle.
+
+Deals the same amount of damage as regular Campfire and drops a Copper Nugget if broken without Silk Touch.
+Can be waterlogged
 
 ### COPPER HORN AND NEW GOAT HORN SOUNDS
 
