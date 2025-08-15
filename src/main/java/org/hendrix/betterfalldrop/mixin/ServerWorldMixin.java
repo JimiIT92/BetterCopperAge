@@ -44,6 +44,7 @@ public abstract class ServerWorldMixin implements EntityView, BlockRenderView {
      */
     @Redirect(method = "getLightningRodPos", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/poi/PointOfInterestStorage;getNearestPosition(Ljava/util/function/Predicate;Ljava/util/function/Predicate;Lnet/minecraft/util/math/BlockPos;ILnet/minecraft/world/poi/PointOfInterestStorage$OccupationStatus;)Ljava/util/Optional;"))
     private Optional<BlockPos> getLightningRodPos(final PointOfInterestStorage pointOfInterestStorage, final Predicate<RegistryEntry<PointOfInterestType>> typePredicate, final Predicate<BlockPos> posPredicate, final BlockPos pos, final int radius, final PointOfInterestStorage.OccupationStatus occupationStatus) {
+        final Random random = Random.create();
         Optional<BlockPos> lightningRodPos = pointOfInterestStorage.getNearestPosition(
                 typePredicate,
                 posPredicate,
@@ -51,10 +52,10 @@ public abstract class ServerWorldMixin implements EntityView, BlockRenderView {
                 radius,
                 occupationStatus
         );
-        if(lightningRodPos.isEmpty()) {
+        if(lightningRodPos.isEmpty() && random.nextBoolean()) {
             final List<LivingEntity> nearbyEntities = this.getEntitiesByClass(LivingEntity.class, Box.enclosing(pos, pos.withY(this.getTopYInclusive() + 1)).expand(radius), this::canBeStruckByLightning);
             if (!nearbyEntities.isEmpty()) {
-                lightningRodPos = Optional.of(nearbyEntities.get(Random.create().nextInt(nearbyEntities.size())).getBlockPos());
+                lightningRodPos = Optional.of(nearbyEntities.get(random.nextInt(nearbyEntities.size())).getBlockPos());
             }
         }
         return lightningRodPos;

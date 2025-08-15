@@ -2,7 +2,7 @@ package org.hendrix.betterfalldrop.mixin;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.*;
+import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.entity.ai.brain.task.MoveItemsTask;
 import net.minecraft.entity.passive.CopperGolemBrain;
 import net.minecraft.entity.passive.CopperGolemEntity;

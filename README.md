@@ -67,6 +67,8 @@ the duration by 10 ticks.
 
 If they are pressed while oxidizing, waxing or scraping, their press state will be reset.
 
+Plus, if a Copper Golem stops on them, there's a chance that they'll press the button!
+
 ### MEDIUM WEIGHTED PRESSURE PLATES
 
 Crafted with 2 copper ingots, these new Weighted Pressure Plates acts as a middle ground between the Light and the
