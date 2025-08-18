@@ -30,7 +30,15 @@ public final class BetterFallDropClient implements ClientModInitializer {
                 BFDBlocks.GOLDEN_GRATE,
                 BFDBlocks.GOLDEN_BARS,
                 BFDBlocks.GOLDEN_CHAIN,
-                BFDBlocks.GOLDEN_LANTERN
+                BFDBlocks.GOLDEN_LANTERN,
+                BFDBlocks.COPPER_RAIL,
+                BFDBlocks.EXPOSED_COPPER_RAIL,
+                BFDBlocks.WEATHERED_COPPER_RAIL,
+                BFDBlocks.OXIDIZED_COPPER_RAIL,
+                BFDBlocks.WAXED_COPPER_RAIL,
+                BFDBlocks.WAXED_EXPOSED_COPPER_RAIL,
+                BFDBlocks.WAXED_WEATHERED_COPPER_RAIL,
+                BFDBlocks.WAXED_OXIDIZED_COPPER_RAIL
         );
         BlockEntityRendererFactories.register(BFDBlockEntityTypes.CAMPFIRE, CampfireBlockEntityRenderer::new);
     }

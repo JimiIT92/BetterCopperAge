@@ -6,6 +6,8 @@
     "AbstractFireBlockMixin",
     "AxeItemMixin",
     "CopperGolemBrainMixin",
+    "DefaultMinecartControllerMixin",
+    "ExperimentalMinecartControllerMixin",
     "LightningEntityMixin",
     "ServerWorldMixin",
     "ShapedRecipeMixin",

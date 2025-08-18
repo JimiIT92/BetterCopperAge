@@ -48,6 +48,19 @@ Also, two scrapped Goat Horn sounds has been added, that can also be turned into
 - Fly: dropped from regular Goats
 - Resist: dropped from screaming Goats
 
+### COPPER RAILS
+
+Move your Minecarts at different speeds with the new Copper Rails
+
+<img src="./.docs/copper_rails.png" alt="Copper Rails" />
+
+The Copper Rails act as powered rails but doesn't require any redstone input. To counterbalance this, they accelerate
+Minecarts less than a powered rail, with the acceleration decreasing with the oxidation level.
+
+Crafted like Powered Rails but with Copper Ingots instead of Gold Ingots
+
+<img src="./.docs/copper_rails_crafting.png" alt="Copper Rails crafting" />
+
 ### COPPER BUTTONS
 
 Originally, Copper Golem was designed to interact with Copper Buttons.

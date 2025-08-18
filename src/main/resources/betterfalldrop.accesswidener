@@ -1,0 +1,4 @@
+accessWidener v2 named
+accessible field net/minecraft/entity/vehicle/MinecartController minecart Lnet/minecraft/entity/vehicle/AbstractMinecartEntity;
+accessible class net/minecraft/entity/vehicle/ExperimentalMinecartController$MoveIteration
+accessible field net/minecraft/entity/vehicle/ExperimentalMinecartController$MoveIteration accelerated Z

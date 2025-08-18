@@ -68,6 +68,10 @@
     "betterfalldrop:medium_weighted_pressure_plate",
     "betterfalldrop:exposed_medium_weighted_pressure_plate",
     "betterfalldrop:weathered_medium_weighted_pressure_plate",
-    "betterfalldrop:oxidized_medium_weighted_pressure_plate"
+    "betterfalldrop:oxidized_medium_weighted_pressure_plate",
+    "betterfalldrop:copper_rail",
+    "betterfalldrop:exposed_copper_rail",
+    "betterfalldrop:weathered_copper_rail",
+    "betterfalldrop:oxidized_copper_rail"
   ]
 }

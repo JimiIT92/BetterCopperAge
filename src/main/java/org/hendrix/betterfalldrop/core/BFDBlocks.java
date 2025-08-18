@@ -45,6 +45,16 @@ public final class BFDBlocks {
     public static final Block WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.WEATHERED, true);
     public static final Block WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerCopperPressurePlate(Oxidizable.OxidationLevel.OXIDIZED, true);
 
+    public static final Block COPPER_RAIL = registerCopperRail(Oxidizable.OxidationLevel.UNAFFECTED, false);
+    public static final Block EXPOSED_COPPER_RAIL = registerCopperRail(Oxidizable.OxidationLevel.EXPOSED, false);
+    public static final Block WEATHERED_COPPER_RAIL = registerCopperRail(Oxidizable.OxidationLevel.WEATHERED, false);
+    public static final Block OXIDIZED_COPPER_RAIL = registerCopperRail(Oxidizable.OxidationLevel.OXIDIZED, false);
+
+    public static final Block WAXED_COPPER_RAIL = registerCopperRail(Oxidizable.OxidationLevel.UNAFFECTED, true);
+    public static final Block WAXED_EXPOSED_COPPER_RAIL = registerCopperRail(Oxidizable.OxidationLevel.EXPOSED, true);
+    public static final Block WAXED_WEATHERED_COPPER_RAIL = registerCopperRail(Oxidizable.OxidationLevel.WEATHERED, true);
+    public static final Block WAXED_OXIDIZED_COPPER_RAIL = registerCopperRail(Oxidizable.OxidationLevel.OXIDIZED, true);
+
     public static final Block COPPER_FIRE = registerCopperFire();
     public static final Block COPPER_CAMPFIRE = registerCopperCampfire();
 
@@ -93,6 +103,19 @@ public final class BFDBlocks {
         final String name = BlockUtils.oxidizableBlockName(oxidationLevel, isWaxed, "medium_weighted", "pressure_plate");
         final AbstractBlock.Settings settings = AbstractBlock.Settings.create().mapColor(BlockUtils.oxidizableMapColor(oxidationLevel)).solid().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY).registryKey(RegistryKeyUtils.block(name));
         return registerBlock(name, Suppliers.memoize(() -> isWaxed ? new MediumWeightedPressurePlateBlock(oxidationLevel, settings) : new OxidizableMediumWeightedPressurePlateBlock(oxidationLevel, settings)));
+    }
+
+    /**
+     * Register a {@link CopperRailBlock Copper Rail}
+     *
+     * @param oxidationLevel The {@link Oxidizable.OxidationLevel Oxidation Level}
+     * @param isWaxed {@link Boolean Whether the rail is waxed}
+     * @return The {@link Block registered Block}
+     */
+    private static Block registerCopperRail(final Oxidizable.OxidationLevel oxidationLevel, final boolean isWaxed) {
+        final String name = BlockUtils.copperBlockName(oxidationLevel, isWaxed, "rail");
+        final AbstractBlock.Settings settings = AbstractBlock.Settings.create().noCollision().strength(0.7F).sounds(BlockSoundGroup.METAL).registryKey(RegistryKeyUtils.block(name));
+        return registerBlock(name, Suppliers.memoize(() -> isWaxed ? new CopperRailBlock(oxidationLevel, settings) : new OxidizableCopperRailBlock(oxidationLevel, settings)));
     }
 
     /**
@@ -333,6 +356,10 @@ public final class BFDBlocks {
         unwaxedToWaxedBlocks.put(EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
         unwaxedToWaxedBlocks.put(WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
         unwaxedToWaxedBlocks.put(OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        unwaxedToWaxedBlocks.put(COPPER_RAIL, WAXED_COPPER_RAIL);
+        unwaxedToWaxedBlocks.put(EXPOSED_COPPER_RAIL, WAXED_EXPOSED_COPPER_RAIL);
+        unwaxedToWaxedBlocks.put(WEATHERED_COPPER_RAIL, WAXED_WEATHERED_COPPER_RAIL);
+        unwaxedToWaxedBlocks.put(OXIDIZED_COPPER_RAIL, WAXED_OXIDIZED_COPPER_RAIL);
     }
 
 }
