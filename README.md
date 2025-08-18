@@ -199,6 +199,16 @@ Lightning Rods nearby.
 
 <img src="./.docs/lightning_striking_copper_golem.png" alt="Lightning striking a Copper Golem" />
 
+### NEW ADVANCEMENTS
+
+Two new advancements has been added to further enhance this drop experience:
+- Lightning Life
+  - Summon a Copper Golem
+- Heavy Metal
+  - Use a Copper Horn
+
+Both advancements can be found in the Adventure category, under the Surge Protector advancement
+
 -------------------------
 
 ### 👨🏼‍💻 How to contribute

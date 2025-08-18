@@ -56,5 +56,9 @@
   "instrument.betterfalldrop.fresh_nest_thought_copper_horn": "Fresh Nest Thought",
   "instrument.betterfalldrop.secret_lake_tear_copper_horn": "Secret Lake Tear",
   "instrument.betterfalldrop.fearless_river_gift_copper_horn": "Fearless River Gift",
-  "instrument.betterfalldrop.sweet_moon_love_copper_horn": "Sweet Moon Love"
+  "instrument.betterfalldrop.sweet_moon_love_copper_horn": "Sweet Moon Love",
+  "advancements.betterfalldrop.adventure.summon_copper_golem.title": "Lightning Life",
+  "advancements.betterfalldrop.adventure.summon_copper_golem.description": "Summon a Copper Golem",
+  "advancements.betterfalldrop.adventure.use_copper_horn.title": "Heavy Metal",
+  "advancements.betterfalldrop.adventure.use_copper_horn.description": "Use a Copper Horn to play some good music"
 }
