@@ -3,10 +3,10 @@ package org.hendrix.betterfalldrop.item;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.property.Properties;
@@ -20,6 +20,7 @@ import net.minecraft.world.event.GameEvent;
 import org.hendrix.betterfalldrop.BetterFallDrop;
 import org.hendrix.betterfalldrop.core.BFDTags;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -37,14 +38,36 @@ public final class WrenchItem extends Item {
     }
 
     /**
-     * Rotate a {@link Block Block} when interacted
+     * Prevent the {@link Item Item} from mining {@link Block Blocks}
      *
-     * @param context The {@link ItemUsageContext Item Usage Context}
+     * @param world The {@link World World reference}
+     * @param blockState The {@link BlockState current Block State}
+     * @param blockPos The {@link BlockPos current Block Pos}
+     * @param livingEntity The {@link LivingEntity Entity interacting with the Block}
+     * @param itemStack The {@link ItemStack ItemStack used to interact with the Block}
      * @return The {@link ActionResult Action Result}
      */
     @Override
-    public ActionResult useOnBlock(final ItemUsageContext context) {
-        return tryCycleProperties(context,
+    public boolean canMine(final ItemStack itemStack, final BlockState blockState, final World world, final BlockPos blockPos, final LivingEntity livingEntity) {
+        if (!world.isClient() && livingEntity instanceof PlayerEntity playerEntity) {
+            this.use(playerEntity, blockState, world, blockPos, itemStack, playerEntity.getActiveHand());
+        }
+        return false;
+    }
+
+    /**
+     * Try cycle some {@link Property Properties} on a {@link Block Block}
+     *
+     * @param world      The {@link World World reference}
+     * @param blockState The {@link BlockState current Block State}
+     * @param blockPos   The {@link BlockPos current Block Pos}
+     * @param player     The {@link PlayerEntity Player interacting with the Block}
+     * @param itemStack  The {@link ItemStack ItemStack used to interact with the Block}
+     * @param hand       The {@link Hand Hand used to interact with the Block}
+     */
+    private void use(final PlayerEntity player, final BlockState blockState, final World world, final BlockPos blockPos, final ItemStack itemStack, final Hand hand) {
+        final boolean isSneaking = player != null && player.isSneaking();
+        final List<Property<?>> properties = Arrays.asList(
                 Properties.AXIS,
                 Properties.FACING,
                 Properties.ROTATION,
@@ -55,34 +78,14 @@ public final class WrenchItem extends Item {
                 Properties.DOOR_HINGE,
                 Properties.ORIENTATION
         );
-    }
-
-    /**
-     * Try cycle some {@link Property Properties} on the {@link Block Block}
-     *
-     * @param context The {@link ItemUsageContext Item Usage Context}
-     * @param properties The {@link Property Properties to check}
-     * @return The {@link ActionResult Action Result}
-     */
-    private ActionResult tryCycleProperties(final ItemUsageContext context, final Property<?>... properties) {
-        final World world = context.getWorld();
-        final BlockPos blockPos = context.getBlockPos();
-        final BlockState blockState = world.getBlockState(blockPos);
-        final PlayerEntity player = context.getPlayer();
-        final ItemStack itemStack = context.getStack();
-        final Hand hand = context.getHand();
-        final boolean isSneaking = player != null && player.isSneaking();
-
         if(!blockState.isIn(BFDTags.BlockTags.INVALID_FOR_WRENCH)) {
             for (Property<?> property : properties) {
                 if(blockState.contains(property)) {
                     cycleBlockState(world, blockState, blockPos, player, itemStack, property, hand, isSneaking);
-                    return ActionResult.SUCCESS;
+                    return;
                 }
             }
         }
-
-        return super.useOnBlock(context);
     }
 
     /**
@@ -110,6 +113,5 @@ public final class WrenchItem extends Item {
         world.emitGameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Emitter.of(player, blockState));
         itemStack.damage(1, player, hand.method_73186());
     }
-
 
 }

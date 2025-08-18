@@ -94,7 +94,7 @@ Using 2 Iron Ingots and 2 Copper Ingots you can craft a new tool: the Wrench!
 
 With the wrench you can now rotate any Block that can be rotated without the need to break and place them again.
 
-Right-click the Block with the Wrench to cycle the different orientations (for Blocks that can be interacted, you need to press Shift as well)
+Left-click the Block with the Wrench to cycle the different orientations (if you are also sneaking, property will be cycled in the reversed order)
 
 <img src="./.docs/wrench.gif" alt="Player using a Wrench" />
 
