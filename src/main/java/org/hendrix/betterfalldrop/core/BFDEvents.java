@@ -2,7 +2,10 @@ package org.hendrix.betterfalldrop.core;
 
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.ShelfBlock;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.ShelfBlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.passive.CopperGolemEntity;
@@ -16,9 +19,12 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.hendrix.betterfalldrop.BetterFallDrop;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 /**
  * {@link BetterFallDrop Better Fall Drop} Events
@@ -35,13 +41,21 @@ public final class BFDEvents {
      * @return The {@link ActionResult Action Result}
      */
     private static ActionResult toggleShelfState(final PlayerEntity player, final World world, final Hand hand, final BlockHitResult blockHitResult) {
-        /*final BlockPos blockPos = blockHitResult.getBlockPos();
+        final BlockPos blockPos = blockHitResult.getBlockPos();
         final BlockState blockState = world.getBlockState(blockPos);
-        if(player.isSneaking() && player.getStackInHand(hand).isEmpty() && blockState.getBlock() instanceof ShelfBlock && blockState.contains(ShelfBlock.field_61997)) {
-            world.setBlockState(blockPos, blockState.with(ShelfBlock.field_61997, !blockState.get(ShelfBlock.field_61997)));
-            world.playSound(player, blockPos, SoundEvents.BLOCK_SHELF_PLACE_ITEM, SoundCategory.BLOCKS);
-            return ActionResult.SUCCESS;
-        }*/
+        if(player.isSneaking() && player.getStackInHand(hand).isEmpty() && blockState.getBlock() instanceof ShelfBlock) {
+            final Optional<ShelfBlockEntity> optionalShelfBlockEntity = world.getBlockEntity(blockPos, BlockEntityType.SHELF);
+            if(optionalShelfBlockEntity.isPresent()) {
+                final ShelfBlockEntity shelfBlockEntity = optionalShelfBlockEntity.get();
+                if(shelfBlockEntity.canPlayerUse(player)) {
+                    shelfBlockEntity.field_62079 = !shelfBlockEntity.field_62079;
+                    world.setBlockState(blockPos, blockState);
+                    world.addBlockEntity(shelfBlockEntity);
+                    world.playSound(player, blockPos, SoundEvents.BLOCK_SHELF_PLACE_ITEM, SoundCategory.BLOCKS);
+                    return ActionResult.SUCCESS;
+                }
+            }
+        }
 
         return ActionResult.PASS;
     }
