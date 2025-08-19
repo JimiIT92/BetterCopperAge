@@ -4,6 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.hendrix.betterfalldrop.BetterFallDrop;
+import org.hendrix.betterfalldrop.utils.BlockUtils;
 
 /**
  * {@link BetterFallDrop Better Fall Drop} {@link WeightedPressurePlateBlock Copper Weighted Pressure Plate Block}
@@ -38,7 +39,7 @@ public class MediumWeightedPressurePlateBlock extends WeightedPressurePlateBlock
      */
     @Override
     protected void onBlockAdded(final BlockState state, final World world, final BlockPos pos, final BlockState oldState, final boolean notify) {
-        if(BFDOxidizable.shouldResetPoweredState(isWaxed(), state, oldState)) {
+        if(BlockUtils.shouldResetPoweredState(state, oldState)) {
             world.setBlockState(pos, state.with(POWER, 0));
         }
         super.onBlockAdded(state, world, pos, oldState, notify);
@@ -57,15 +58,6 @@ public class MediumWeightedPressurePlateBlock extends WeightedPressurePlateBlock
             case WEATHERED  -> 40;
             case OXIDIZED   -> 50;
         };
-    }
-
-    /**
-     * Check if the {@link Block Block} is waxed
-     *
-     * @return {@link Boolean#TRUE True}
-     */
-    public boolean isWaxed() {
-        return true;
     }
 
 }

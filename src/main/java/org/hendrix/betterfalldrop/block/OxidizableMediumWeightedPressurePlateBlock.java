@@ -2,6 +2,7 @@ package org.hendrix.betterfalldrop.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Oxidizable;
 import net.minecraft.block.WeightedPressurePlateBlock;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -11,7 +12,7 @@ import org.hendrix.betterfalldrop.BetterFallDrop;
 /**
  * {@link BetterFallDrop Better Fall Drop} {@link WeightedPressurePlateBlock Copper Weighted Pressure Plate Block}
  */
-public final class OxidizableMediumWeightedPressurePlateBlock extends MediumWeightedPressurePlateBlock implements BFDOxidizable {
+public final class OxidizableMediumWeightedPressurePlateBlock extends MediumWeightedPressurePlateBlock implements Oxidizable {
 
     /**
      * Constructor. Set the {@link Block Block} settings
@@ -54,16 +55,6 @@ public final class OxidizableMediumWeightedPressurePlateBlock extends MediumWeig
     @Override
     public OxidationLevel getDegradationLevel() {
         return this.oxidationLevel;
-    }
-
-    /**
-     * Check if the {@link Block Block} is waxed
-     *
-     * @return {@link Boolean#FALSE False}
-     */
-    @Override
-    public boolean isWaxed() {
-        return false;
     }
 
 }

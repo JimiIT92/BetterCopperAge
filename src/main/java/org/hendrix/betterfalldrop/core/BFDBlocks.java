@@ -1,11 +1,10 @@
 package org.hendrix.betterfalldrop.core;
 
 import com.google.common.base.Suppliers;
-import com.google.common.collect.BiMap;
+import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.item.HoneycombItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -340,26 +339,41 @@ public final class BFDBlocks {
      * Register all {@link Block Blocks}
      */
     public static void register() {
+        registerOxidizableBlocks();
         registerWaxableBlocks();
+    }
+
+    /**
+     * Register all {@link Oxidizable Oxidizable Blocks}
+     */
+    private static void registerOxidizableBlocks() {
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(COPPER_BUTTON, EXPOSED_COPPER_BUTTON);
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(EXPOSED_COPPER_BUTTON, WEATHERED_COPPER_BUTTON);
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(WEATHERED_COPPER_BUTTON, OXIDIZED_COPPER_BUTTON);
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(MEDIUM_WEIGHTED_PRESSURE_PLATE, EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE, OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(COPPER_RAIL, EXPOSED_COPPER_RAIL);
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(EXPOSED_COPPER_RAIL, WEATHERED_COPPER_RAIL);
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(WEATHERED_COPPER_RAIL, OXIDIZED_COPPER_RAIL);
     }
 
     /**
      * Register all {@link Block Waxable Blocks}
      */
     private static void registerWaxableBlocks() {
-        final BiMap<Block, Block> unwaxedToWaxedBlocks = HoneycombItem.UNWAXED_TO_WAXED_BLOCKS.get();
-        unwaxedToWaxedBlocks.put(COPPER_BUTTON, WAXED_COPPER_BUTTON);
-        unwaxedToWaxedBlocks.put(EXPOSED_COPPER_BUTTON, WAXED_EXPOSED_COPPER_BUTTON);
-        unwaxedToWaxedBlocks.put(WEATHERED_COPPER_BUTTON, WAXED_WEATHERED_COPPER_BUTTON);
-        unwaxedToWaxedBlocks.put(OXIDIZED_COPPER_BUTTON, WAXED_OXIDIZED_COPPER_BUTTON);
-        unwaxedToWaxedBlocks.put(MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-        unwaxedToWaxedBlocks.put(EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-        unwaxedToWaxedBlocks.put(WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-        unwaxedToWaxedBlocks.put(OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
-        unwaxedToWaxedBlocks.put(COPPER_RAIL, WAXED_COPPER_RAIL);
-        unwaxedToWaxedBlocks.put(EXPOSED_COPPER_RAIL, WAXED_EXPOSED_COPPER_RAIL);
-        unwaxedToWaxedBlocks.put(WEATHERED_COPPER_RAIL, WAXED_WEATHERED_COPPER_RAIL);
-        unwaxedToWaxedBlocks.put(OXIDIZED_COPPER_RAIL, WAXED_OXIDIZED_COPPER_RAIL);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE, WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(COPPER_BUTTON, WAXED_COPPER_BUTTON);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(EXPOSED_COPPER_BUTTON, WAXED_EXPOSED_COPPER_BUTTON);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(WEATHERED_COPPER_BUTTON, WAXED_WEATHERED_COPPER_BUTTON);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(OXIDIZED_COPPER_BUTTON, WAXED_OXIDIZED_COPPER_BUTTON);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(COPPER_RAIL, WAXED_COPPER_RAIL);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(EXPOSED_COPPER_RAIL, WAXED_EXPOSED_COPPER_RAIL);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(WEATHERED_COPPER_RAIL, WAXED_WEATHERED_COPPER_RAIL);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(OXIDIZED_COPPER_RAIL, WAXED_OXIDIZED_COPPER_RAIL);
     }
 
 }

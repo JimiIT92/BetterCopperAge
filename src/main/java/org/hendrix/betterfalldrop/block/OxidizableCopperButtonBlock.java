@@ -3,6 +3,7 @@ package org.hendrix.betterfalldrop.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ButtonBlock;
+import net.minecraft.block.Oxidizable;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -11,7 +12,7 @@ import org.hendrix.betterfalldrop.BetterFallDrop;
 /**
  * {@link BetterFallDrop Better Fall Drop} {@link ButtonBlock Copper Button Block}
  */
-public final class OxidizableCopperButtonBlock extends CopperButtonBlock implements BFDOxidizable {
+public final class OxidizableCopperButtonBlock extends CopperButtonBlock implements Oxidizable {
 
     /**
      * The {@link OxidationLevel button Oxidation Level}
@@ -60,16 +61,6 @@ public final class OxidizableCopperButtonBlock extends CopperButtonBlock impleme
     @Override
     public OxidationLevel getDegradationLevel() {
         return this.oxidationLevel;
-    }
-
-    /**
-     * Check if the {@link Block Block} is waxed
-     *
-     * @return {@link Boolean#FALSE False}
-     */
-    @Override
-    public boolean isWaxed() {
-        return false;
     }
 
 }

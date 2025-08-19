@@ -11,7 +11,7 @@ import org.hendrix.betterfalldrop.BetterFallDrop;
 /**
  * {@link BetterFallDrop Better Fall Drop} {@link CopperRailBlock Oxidizable Copper Rail Block}
  */
-public final class OxidizableCopperRailBlock extends CopperRailBlock implements BFDOxidizable {
+public final class OxidizableCopperRailBlock extends CopperRailBlock implements Oxidizable {
 
     /**
      * Constructor. Set the {@link Settings Block Settings}
@@ -54,16 +54,6 @@ public final class OxidizableCopperRailBlock extends CopperRailBlock implements 
     @Override
     public OxidationLevel getDegradationLevel() {
         return super.getDegradationLevel();
-    }
-
-    /**
-     * Check if the {@link Block Block} is waxed
-     *
-     * @return {@link Boolean#FALSE False}
-     */
-    @Override
-    public boolean isWaxed() {
-        return false;
     }
 
 }

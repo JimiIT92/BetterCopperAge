@@ -115,13 +115,4 @@ public class CopperRailBlock extends AbstractRailBlock {
         return this.oxidationLevel;
     }
 
-    /**
-     * Check if the {@link Block Block} is waxed
-     *
-     * @return {@link Boolean#TRUE True}
-     */
-    public boolean isWaxed() {
-        return true;
-    }
-
 }

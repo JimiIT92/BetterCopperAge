@@ -4,6 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.hendrix.betterfalldrop.BetterFallDrop;
+import org.hendrix.betterfalldrop.utils.BlockUtils;
 
 /**
  * {@link BetterFallDrop Better Fall Drop} {@link ButtonBlock Copper Button Block}
@@ -47,19 +48,10 @@ public class CopperButtonBlock extends ButtonBlock {
      */
     @Override
     protected void onBlockAdded(final BlockState state, final World world, final BlockPos pos, final BlockState oldState, final boolean notify) {
-        if(BFDOxidizable.shouldResetPoweredState(isWaxed(), state, oldState)) {
+        if(BlockUtils.shouldResetPoweredState(state, oldState)) {
             world.setBlockState(pos, state.with(POWERED, Boolean.FALSE));
         }
         super.onBlockAdded(state, world, pos, oldState, notify);
-    }
-
-    /**
-     * Check if the {@link Block Block} is waxed
-     *
-     * @return {@link Boolean#TRUE True}
-     */
-    public boolean isWaxed() {
-        return true;
     }
 
 }

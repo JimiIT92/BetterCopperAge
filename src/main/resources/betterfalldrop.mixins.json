@@ -4,11 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "AbstractFireBlockMixin",
-    "AxeItemMixin",
     "CopperGolemBrainMixin",
     "DefaultMinecartControllerMixin",
     "ExperimentalMinecartControllerMixin",
-    "LightningEntityMixin",
     "ServerWorldMixin",
     "ShapedRecipeMixin",
     "WaitTaskMixin"
