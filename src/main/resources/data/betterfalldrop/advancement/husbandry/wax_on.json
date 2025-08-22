@@ -1,0 +1,47 @@
+{
+  "criteria": {
+    "wax_on": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "betterfalldrop:copper_button",
+                  "betterfalldrop:exposed_copper_button",
+                  "betterfalldrop:weathered_copper_button",
+                  "betterfalldrop:oxidized_copper_button",
+                  "betterfalldrop:medium_weighted_pressure_plate",
+                  "betterfalldrop:exposed_medium_weighted_pressure_plate",
+                  "betterfalldrop:weathered_medium_weighted_pressure_plate",
+                  "betterfalldrop:oxidized_medium_weighted_pressure_plate",
+                  "betterfalldrop:copper_rail",
+                  "betterfalldrop:exposed_copper_rail",
+                  "betterfalldrop:weathered_copper_rail",
+                  "betterfalldrop:oxidized_copper_rail"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "minecraft:honeycomb"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "rewards": {
+    "function": "betterfalldrop:wax_on"
+  },
+  "requirements": [
+    [
+      "wax_on"
+    ]
+  ],
+  "sends_telemetry_event": false
+}
