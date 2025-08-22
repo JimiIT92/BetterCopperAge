@@ -199,6 +199,13 @@ Lightning Rods nearby.
 
 <img src="./.docs/lightning_striking_copper_golem.png" alt="Lightning striking a Copper Golem" />
 
+### COPPER GOLEMS IN STRUCTURES
+
+Fully oxidized Copper Golems can now generate in Trail Ruins or Trial Chambers
+
+<img src="./.docs/copper_golem_in_trail_ruins.png" alt="Copper Golem in Trail Ruins" />
+<img src="./.docs/copper_golem_in_trial_chambers.png" alt="Copper Golem in Trial Chambers" />
+
 ### NEW ADVANCEMENTS
 
 Two new advancements has been added to further enhance this drop experience:
