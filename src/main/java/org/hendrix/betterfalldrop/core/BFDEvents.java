@@ -73,11 +73,11 @@ public final class BFDEvents {
     private static ActionResult placeItemOnCopperGolem(final PlayerEntity player, final World world, final Hand hand, final Entity entity, final @Nullable EntityHitResult entityHitResult) {
         if(entity instanceof CopperGolemEntity copperGolemEntity) {
             final ItemStack itemStack = player.getStackInHand(hand);
-            final ItemStack equippedStack = copperGolemEntity.getEquippedStack(EquipmentSlot.HEAD);
+            final ItemStack equippedStack = copperGolemEntity.getEquippedStack(EquipmentSlot.SADDLE);
 
             if(itemStack.isIn(ItemTags.SHEARABLE_FROM_COPPER_GOLEM) && equippedStack.isEmpty()) {
-                copperGolemEntity.equipStack(EquipmentSlot.HEAD, itemStack);
-                copperGolemEntity.setEquipmentDropChance(EquipmentSlot.HEAD, 1.0F);
+                copperGolemEntity.equipStack(EquipmentSlot.SADDLE, itemStack);
+                copperGolemEntity.setEquipmentDropChance(EquipmentSlot.SADDLE, 1.0F);
                 if(!player.isInCreativeMode()) {
                     player.setStackInHand(hand, ItemStack.EMPTY);
                 }
