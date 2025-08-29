@@ -60,5 +60,9 @@
   "advancements.bettercopperage.adventure.summon_copper_golem.title": "Lightning Life",
   "advancements.bettercopperage.adventure.summon_copper_golem.description": "Summon a Copper Golem",
   "advancements.bettercopperage.adventure.use_copper_horn.title": "Heavy Metal",
-  "advancements.bettercopperage.adventure.use_copper_horn.description": "Use a Copper Horn to play some good music"
+  "advancements.bettercopperage.adventure.use_copper_horn.description": "Use a Copper Horn to play some good music",
+  "gamerule.bettercopperage.copperGolemAttractsLightning": "Copper Golem attracts Lighting",
+  "gamerule.bettercopperage.copperGolemAttractsLightning.description": "Controls whether or not Lightning should be attracted by Copper Golems if there's no Lighting Rod nearby",
+  "gamerule.bettercopperage.copperArmorAttractsLightning": "Copper Armor attracts Lighting",
+  "gamerule.bettercopperage.copperArmorAttractsLightning.description": "Controls whether or not Lightning should be attracted by any entity wearing a piece of Copper Armor if there's no Lighting Rod nearby"
 }

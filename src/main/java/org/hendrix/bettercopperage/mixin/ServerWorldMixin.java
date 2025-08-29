@@ -14,8 +14,10 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockRenderView;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.GameMode;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.poi.PointOfInterestStorage;
 import net.minecraft.world.poi.PointOfInterestType;
+import org.hendrix.bettercopperage.core.BCAGameRules;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -30,7 +32,7 @@ import java.util.function.Predicate;
  */
 @Mixin(ServerWorld.class)
 public abstract class ServerWorldMixin implements EntityView, BlockRenderView {
-
+    
     /**
      * Determine where a {@link LightningEntity Lightning Bolt} should strike
      *
@@ -69,11 +71,46 @@ public abstract class ServerWorldMixin implements EntityView, BlockRenderView {
      */
     @Unique
     private boolean canBeStruckByLightning(final LivingEntity entity) {
-        return entity != null && entity.isAlive() && this.isSkyVisible(entity.getBlockPos()) && (
-                entity instanceof CopperGolemEntity || (
-                        entity instanceof PlayerEntity player && GameMode.SURVIVAL.equals(player.getGameMode()) && isWearingCopperArmor(player)
-                ) || (!(entity instanceof PlayerEntity) && isWearingCopperArmor(entity))
-        );
+        return entity != null && entity.isAlive() && this.isSkyVisible(entity.getBlockPos()) && (canStruckCopperGolem(entity) || canStruckEntity(entity));
+    }
+
+    /**
+     * Check if the {@link LivingEntity provided Entity} is a {@link CopperGolemEntity Copper Golem}
+     * and can be struck by a {@link LightningEntity Lightning}
+     *
+     * @param entity The {@link LivingEntity entity to check}
+     * @return  {@link Boolean True} if the {@link LivingEntity provided Entity} is a {@link CopperGolemEntity Copper Golem}
+     *          and the {@link BCAGameRules#COPPER_GOLEM_ATTRACTS_LIGHTNING copperGolemAttractsLightning Game Rule is turned on}
+     */
+    @Unique
+    private boolean canStruckCopperGolem(final LivingEntity entity) {
+        return getGameRuleValue(BCAGameRules.COPPER_GOLEM_ATTRACTS_LIGHTNING) && entity instanceof CopperGolemEntity;
+    }
+
+    /**
+     * Check if the {@link LivingEntity provided Entity} is wearing Copper Armor
+     * and can be struck by a {@link LightningEntity Lightning}
+     *
+     * @param entity The {@link LivingEntity entity to check}
+     * @return  {@link Boolean True} if the {@link LivingEntity provided Entity} is wearing Copper Armor
+     *          and the {@link BCAGameRules#COPPER_ARMOR_ATTRACTS_LIGHTNING copperArmorAttractsLightning Game Rule is turned on}
+     */
+    @Unique
+    private boolean canStruckEntity(final LivingEntity entity) {
+        return getGameRuleValue(BCAGameRules.COPPER_ARMOR_ATTRACTS_LIGHTNING) && ((
+                entity instanceof PlayerEntity player && GameMode.SURVIVAL.equals(player.getGameMode()) && isWearingCopperArmor(player)
+        ) || (!(entity instanceof PlayerEntity) && isWearingCopperArmor(entity)));
+    }
+
+    /**
+     * Get a {@link GameRules.Key Game Rule value}
+     *
+     * @param gameRule The {@link GameRules.Key Game Rule Key}
+     * @return The {@link Boolean Game Rule value}
+     */
+    @Unique
+    private boolean getGameRuleValue(final GameRules.Key<GameRules.BooleanRule> gameRule) {
+        return ((ServerWorld)(Object)this).getGameRules().getBoolean(gameRule);
     }
 
     /**

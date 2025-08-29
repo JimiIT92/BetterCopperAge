@@ -199,6 +199,14 @@ Lightning Rods nearby.
 
 <img src="./.docs/lightning_striking_copper_golem.png" alt="Lightning striking a Copper Golem" />
 
+These mechanics can be controlled using two new Game Rules:
+- `bettercopperage:copperGolemAttractsLightning`
+  - When enabled, Copper Golems might be struck by a Lightning during a Thunderstorm, if there's no Lightning Rod nearby
+  - Default `true`
+- `bettercopperage:copperArmorAttractsLightning`
+  - When enabled, any entity that is wearing a piece of Copper Armor might be struck by a Lightning during a Thunderstorm, if there's no Lightning Rod nearby
+  - Default `true`
+
 ### COPPER GOLEMS IN STRUCTURES
 
 Fully oxidized Copper Golems can now generate in Trail Ruins or Trial Chambers
