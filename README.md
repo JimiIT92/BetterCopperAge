@@ -257,7 +257,8 @@ Any other website asking you money for this project is a scam, and you should im
 -------------------------
 ### 😁 Conclusion
 
-[WIP] Mod Conclusion
+With the Copper Age drop, players discovered how to use Copper to create new Tools and even new friends... 
+with this mod they can create even more items that can make a difference in their play-stile!
 
 I hope you enjoy Better Copper Age as much as I enjoy develop new ideas and content for it,
 and let me know if there are any issues on the [issue tracker](https://github.com/JimiIT92/BetterCopperAge/issues/new?assignees=JimiIT92&labels=enhancement&template=bug_report.md&title=).
