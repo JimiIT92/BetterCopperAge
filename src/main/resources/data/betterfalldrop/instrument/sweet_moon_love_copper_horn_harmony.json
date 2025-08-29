@@ -1,8 +1,0 @@
-{
-  "description": {
-    "translate": "instrument.betterfalldrop.sweet_moon_love_copper_horn_harmony"
-  },
-  "range": 256.0,
-  "sound_event": "betterfalldrop:copper_horn_sweet_moon_love_harmony",
-  "use_duration": 7.0
-}

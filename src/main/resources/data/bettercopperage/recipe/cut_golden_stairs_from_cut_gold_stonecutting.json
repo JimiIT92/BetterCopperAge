@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "bettercopperage:cut_gold",
+  "result": {
+    "count": 1,
+    "id": "bettercopperage:cut_golden_stairs"
+  }
+}

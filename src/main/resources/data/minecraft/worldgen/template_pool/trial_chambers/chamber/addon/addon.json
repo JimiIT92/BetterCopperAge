@@ -113,7 +113,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "betterfalldrop:trial_chambers/chamber/addon/c1_breeze_copper_golem",
+        "location": "bettercopperage:trial_chambers/chamber/addon/c1_breeze_copper_golem",
         "processors": {
           "processors": []
         },
@@ -124,7 +124,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "betterfalldrop:trial_chambers/chamber/addon/hanging_platform_copper_golem",
+        "location": "bettercopperage:trial_chambers/chamber/addon/hanging_platform_copper_golem",
         "processors": {
           "processors": []
         },

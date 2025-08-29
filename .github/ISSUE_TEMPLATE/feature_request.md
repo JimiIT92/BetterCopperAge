@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Add your ideas to BetterFallDrop!
+about: Add your ideas to BetterCopperAge!
 title: ''
 labels: enhancement
 assignees: JimiIT92

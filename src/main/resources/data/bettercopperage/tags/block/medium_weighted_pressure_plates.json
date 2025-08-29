@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "bettercopperage:medium_weighted_pressure_plate",
+    "bettercopperage:exposed_medium_weighted_pressure_plate",
+    "bettercopperage:weathered_medium_weighted_pressure_plate",
+    "bettercopperage:oxidized_medium_weighted_pressure_plate",
+    "bettercopperage:waxed_medium_weighted_pressure_plate",
+    "bettercopperage:waxed_exposed_medium_weighted_pressure_plate",
+    "bettercopperage:waxed_weathered_medium_weighted_pressure_plate",
+    "bettercopperage:waxed_oxidized_medium_weighted_pressure_plate"
+  ]
+}

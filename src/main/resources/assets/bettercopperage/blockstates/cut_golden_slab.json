@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bettercopperage:block/cut_golden_slab"
+    },
+    "type=double": {
+      "model": "bettercopperage:block/cut_gold"
+    },
+    "type=top": {
+      "model": "bettercopperage:block/cut_golden_slab_top"
+    }
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "description": {
-    "translate": "instrument.betterfalldrop.mumble_fire_memory_copper_horn"
-  },
-  "range": 256.0,
-  "sound_event": "betterfalldrop:copper_horn_mumble_fire_memory",
-  "use_duration": 7.0
-}

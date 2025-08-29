@@ -228,7 +228,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "betterfalldrop:trail_ruins/tower/hall_3_copper_golem",
+        "location": "bettercopperage:trail_ruins/tower/hall_3_copper_golem",
         "processors": "minecraft:trail_ruins_houses_archaeology",
         "projection": "rigid"
       },
@@ -237,7 +237,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "betterfalldrop:trail_ruins/tower/hall_5_copper_golem",
+        "location": "bettercopperage:trail_ruins/tower/hall_5_copper_golem",
         "processors": "minecraft:trail_ruins_houses_archaeology",
         "projection": "rigid"
       },

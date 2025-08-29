@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "betterfalldrop:cut_gold",
-  "result": {
-    "count": 1,
-    "id": "betterfalldrop:cut_golden_stairs"
-  }
-}

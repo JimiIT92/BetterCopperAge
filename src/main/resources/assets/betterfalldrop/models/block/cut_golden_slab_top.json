@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "betterfalldrop:block/cut_gold",
-    "side": "betterfalldrop:block/cut_gold",
-    "top": "betterfalldrop:block/cut_gold"
-  }
-}

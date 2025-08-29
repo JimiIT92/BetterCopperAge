@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "bettercopperage:block/golden_door_bottom",
+    "top": "bettercopperage:block/golden_door_top"
+  }
+}

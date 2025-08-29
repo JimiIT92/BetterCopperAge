@@ -1,13 +1,13 @@
 {
   "replace": false,
   "values": [
-    "betterfalldrop:copper_rail",
-    "betterfalldrop:exposed_copper_rail",
-    "betterfalldrop:weathered_copper_rail",
-    "betterfalldrop:oxidized_copper_rail",
-    "betterfalldrop:waxed_copper_rail",
-    "betterfalldrop:waxed_exposed_copper_rail",
-    "betterfalldrop:waxed_weathered_copper_rail",
-    "betterfalldrop:waxed_oxidized_copper_rail"
+    "bettercopperage:copper_rail",
+    "bettercopperage:exposed_copper_rail",
+    "bettercopperage:weathered_copper_rail",
+    "bettercopperage:oxidized_copper_rail",
+    "bettercopperage:waxed_copper_rail",
+    "bettercopperage:waxed_exposed_copper_rail",
+    "bettercopperage:waxed_weathered_copper_rail",
+    "bettercopperage:waxed_oxidized_copper_rail"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "bettercopperage:block/cut_gold",
+    "side": "bettercopperage:block/cut_gold",
+    "top": "bettercopperage:block/cut_gold"
+  }
+}

@@ -36,7 +36,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "betterfalldrop:trial_chambers/corridor/addon/display_2_copper_golem",
+        "location": "bettercopperage:trial_chambers/corridor/addon/display_2_copper_golem",
         "processors": {
           "processors": []
         },
@@ -47,7 +47,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "betterfalldrop:trial_chambers/corridor/addon/display_3_copper_golem",
+        "location": "bettercopperage:trial_chambers/corridor/addon/display_3_copper_golem",
         "processors": {
           "processors": []
         },

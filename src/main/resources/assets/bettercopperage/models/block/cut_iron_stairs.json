@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "bettercopperage:block/cut_iron",
+    "side": "bettercopperage:block/cut_iron",
+    "top": "bettercopperage:block/cut_iron"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "#betterfalldrop:copper_buttons",
-    "betterfalldrop:iron_button",
-    "betterfalldrop:gold_button"
+    "#bettercopperage:copper_buttons",
+    "bettercopperage:iron_button",
+    "bettercopperage:gold_button"
   ]
 }

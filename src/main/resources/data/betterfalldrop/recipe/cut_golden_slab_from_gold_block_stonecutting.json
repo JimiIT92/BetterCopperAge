@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:gold_block",
-  "result": {
-    "count": 8,
-    "id": "betterfalldrop:cut_golden_slab"
-  }
-}

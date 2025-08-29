@@ -1,16 +1,16 @@
 {
   "replace": false,
   "values": [
-    "betterfalldrop:chiseled_gold",
-    "betterfalldrop:golden_grate",
-    "betterfalldrop:cut_gold",
-    "betterfalldrop:cut_golden_slab",
-    "betterfalldrop:cut_golden_stairs",
-    "betterfalldrop:golden_bars",
-    "betterfalldrop:golden_chain",
-    "betterfalldrop:gold_button",
-    "betterfalldrop:golden_door",
-    "betterfalldrop:golden_trapdoor",
-    "betterfalldrop:golden_lantern"
+    "bettercopperage:chiseled_gold",
+    "bettercopperage:golden_grate",
+    "bettercopperage:cut_gold",
+    "bettercopperage:cut_golden_slab",
+    "bettercopperage:cut_golden_stairs",
+    "bettercopperage:golden_bars",
+    "bettercopperage:golden_chain",
+    "bettercopperage:gold_button",
+    "bettercopperage:golden_door",
+    "bettercopperage:golden_trapdoor",
+    "bettercopperage:golden_lantern"
   ]
 }

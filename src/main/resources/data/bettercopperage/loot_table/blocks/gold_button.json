@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bettercopperage:gold_button"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bettercopperage:blocks/gold_button"
+}

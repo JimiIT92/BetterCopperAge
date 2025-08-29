@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/template_bars_side",
-  "render_type": "cutout",
-  "textures": {
-    "bars": "betterfalldrop:block/golden_bars",
-    "edge": "betterfalldrop:block/golden_bars"
-  }
-}

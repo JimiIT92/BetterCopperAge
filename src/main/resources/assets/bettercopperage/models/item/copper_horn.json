@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/goat_horn",
+    "textures": {
+        "layer0": "bettercopperage:item/copper_horn"
+    }
+}

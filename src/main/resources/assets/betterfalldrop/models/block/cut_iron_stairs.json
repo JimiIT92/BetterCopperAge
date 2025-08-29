@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "betterfalldrop:block/cut_iron",
-    "side": "betterfalldrop:block/cut_iron",
-    "top": "betterfalldrop:block/cut_iron"
-  }
-}

@@ -1,10 +1,10 @@
 {
   "replace": false,
   "values": [
-    "betterfalldrop:chiseled_iron",
-    "betterfalldrop:iron_grate",
-    "betterfalldrop:cut_iron",
-    "betterfalldrop:cut_iron_slab",
-    "betterfalldrop:cut_iron_stairs"
+    "bettercopperage:chiseled_iron",
+    "bettercopperage:iron_grate",
+    "bettercopperage:cut_iron",
+    "bettercopperage:cut_iron_slab",
+    "bettercopperage:cut_iron_stairs"
   ]
 }

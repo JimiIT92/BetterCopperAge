@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "betterfalldrop:cut_iron_stairs",
-    "betterfalldrop:cut_golden_stairs"
+    "bettercopperage:cut_iron_stairs",
+    "bettercopperage:cut_golden_stairs"
   ]
 }

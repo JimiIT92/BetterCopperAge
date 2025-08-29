@@ -1,0 +1,8 @@
+{
+  "description": {
+    "translate": "instrument.bettercopperage.fly_goat_horn"
+  },
+  "range": 256.0,
+  "sound_event": "bettercopperage:goat_horn_fly",
+  "use_duration": 7.0
+}

@@ -19,7 +19,7 @@ If applicable, add screenshots to help explain your problem.
 **Versions (please complete the following information)**
 - Minecraft: [e.g. 1.21.9]
 - Fabric: [e.g. 0.132.3]
-- BetterFallDrop: [e.g. 1.0]
+- BetterCopperAge: [e.g. 1.0]
 
 **Additional context**
 Add any other context about the problem here.

@@ -1,0 +1,47 @@
+{
+  "criteria": {
+    "wax_off": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "bettercopperage:waxed_copper_button",
+                  "bettercopperage:waxed_exposed_copper_button",
+                  "bettercopperage:waxed_weathered_copper_button",
+                  "bettercopperage:waxed_oxidized_copper_button",
+                  "bettercopperage:waxed_medium_weighted_pressure_plate",
+                  "bettercopperage:waxed_exposed_medium_weighted_pressure_plate",
+                  "bettercopperage:waxed_weathered_medium_weighted_pressure_plate",
+                  "bettercopperage:waxed_oxidized_medium_weighted_pressure_plate",
+                  "bettercopperage:waxed_copper_rail",
+                  "bettercopperage:waxed_exposed_copper_rail",
+                  "bettercopperage:waxed_weathered_copper_rail",
+                  "bettercopperage:waxed_oxidized_copper_rail"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "#minecraft:axes"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "rewards": {
+    "function": "bettercopperage:wax_off"
+  },
+  "requirements": [
+    [
+      "wax_off"
+    ]
+  ],
+  "sends_telemetry_event": false
+}
