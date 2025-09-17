@@ -2,8 +2,10 @@ package org.hendrix.bettercopperage.core;
 
 import com.google.common.base.Suppliers;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -29,6 +31,7 @@ public final class BCAItems {
             new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON).useItemPrefixedTranslationKey().registryKey(RegistryKeyUtils.item("copper_horn"))))
     );
     public static final Item WRENCH = registerItem("wrench", Suppliers.memoize(() -> new WrenchItem(new Item.Settings().maxDamage(512).useItemPrefixedTranslationKey().registryKey(RegistryKeyUtils.item("wrench")))));
+    public static final Item MANNEQUIN_SPAWN_EGG = registerItem("mannequin_spawn_egg", Suppliers.memoize(() -> new SpawnEggItem(new Item.Settings().spawnEgg(EntityType.MANNEQUIN).useItemPrefixedTranslationKey().registryKey(RegistryKeyUtils.item("mannequin_spawn_egg")))));
 
     //#endregion
 

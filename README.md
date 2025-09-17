@@ -216,6 +216,14 @@ Fully oxidized Copper Golems can now generate in Trail Ruins or Trial Chambers
 <img src="./.docs/copper_golem_in_trail_ruins.png" alt="Copper Golem in Trail Ruins" />
 <img src="./.docs/copper_golem_in_trial_chambers.png" alt="Copper Golem in Trial Chambers" />
 
+### MANNEQUIN SPAWN EGG
+
+A Spawn Egg for the Mannequin has been added to the Operator Tab in the Creative Inventory
+
+<img src="./.docs/mannequin_spawn_egg.png" alt="Mannequin Spawn Egg" />
+
+This way you can summon a basic mannequin very quickly without using commands!
+
 ### NEW ADVANCEMENTS
 
 Two new advancements has been added to further enhance this drop experience:

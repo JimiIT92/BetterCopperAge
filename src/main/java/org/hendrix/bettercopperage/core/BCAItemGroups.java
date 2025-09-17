@@ -89,6 +89,7 @@ public final class BCAItemGroups {
         );
         addGoatHorns();
         addCopperHorns();
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.OPERATOR).register(entries -> entries.add(BCAItems.MANNEQUIN_SPAWN_EGG));
     }
 
     /**
