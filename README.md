@@ -111,7 +111,9 @@ Left-click the Block with the Wrench to cycle the different orientations (if you
 
 <img src="./.docs/wrench.gif" alt="Player using a Wrench" />
 
-It has 512 uses
+It can also toggle visibility on Item Frames and Glow Item Frames and arms on Armor Stand (only if they're empty).
+
+It has 512 uses.
 
 ### IRON AND GOLD DECORATIVE BLOCKS
 
