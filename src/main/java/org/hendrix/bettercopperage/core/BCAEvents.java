@@ -48,7 +48,7 @@ public final class BCAEvents {
             if(optionalShelfBlockEntity.isPresent()) {
                 final ShelfBlockEntity shelfBlockEntity = optionalShelfBlockEntity.get();
                 if(shelfBlockEntity.canPlayerUse(player)) {
-                    shelfBlockEntity.field_62079 = !shelfBlockEntity.field_62079;
+                    shelfBlockEntity.alignItemsToBottom = !shelfBlockEntity.alignItemsToBottom;
                     world.setBlockState(blockPos, blockState);
                     world.addBlockEntity(shelfBlockEntity);
                     world.playSound(player, blockPos, SoundEvents.BLOCK_SHELF_PLACE_ITEM, SoundCategory.BLOCKS);

@@ -18,7 +18,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Versions (please complete the following information)**
 - Minecraft: [e.g. 1.21.9]
-- Fabric: [e.g. 0.132.3]
+- Fabric: [e.g. 0.133.7]
 - BetterCopperAge: [e.g. 1.0]
 
 **Additional context**

@@ -111,7 +111,7 @@ public final class WrenchItem extends Item {
         world.setBlockState(blockPos, blockState.with(property, nextPropertyValue), Block.NOTIFY_ALL_AND_REDRAW);
         world.playSound(player, blockPos, blockState.getSoundGroup().getPlaceSound(), SoundCategory.BLOCKS);
         world.emitGameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Emitter.of(player, blockState));
-        itemStack.damage(1, player, hand.method_73186());
+        itemStack.damage(1, player, hand);
     }
 
 }
