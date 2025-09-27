@@ -180,7 +180,7 @@ public final class CopperHornItem extends GoatHornItem {
      */
     private static void playSound(final World world, final PlayerEntity player, final Instrument instrument) {
         world.playSoundFromEntity(player, player, instrument.soundEvent().value(), SoundCategory.RECORDS, instrument.range() / 16.0F, 1.0F);
-        world.emitGameEvent(GameEvent.INSTRUMENT_PLAY, player.getPos(), GameEvent.Emitter.of(player));
+        world.emitGameEvent(GameEvent.INSTRUMENT_PLAY, player.getBlockPos(), GameEvent.Emitter.of(player));
     }
 
     /**
