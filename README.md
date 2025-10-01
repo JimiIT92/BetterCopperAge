@@ -257,6 +257,11 @@ You can download Better Copper Age on [CurseForge](https://www.curseforge.com/mi
 Any other websites that offers you Better Copper Age shouldn't be trusted and should be reported immediately (as they could be a scam and contain malicious software)!
 
 -------------------------
+### 📜 Credits
+
+- Thank you JDG for the Chiseled Gold, Chiseled Iron, Cut Iron and Iron Grate textures! ♥️
+
+-------------------------
 ### 🍺 Support the project
 
 Developing and maintaining Better Copper Age, requires a lot of time and effort,
