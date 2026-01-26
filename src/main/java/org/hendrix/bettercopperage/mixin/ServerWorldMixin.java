@@ -14,9 +14,9 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockRenderView;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.GameMode;
-import net.minecraft.world.GameRules;
 import net.minecraft.world.poi.PointOfInterestStorage;
 import net.minecraft.world.poi.PointOfInterestType;
+import net.minecraft.world.rule.GameRule;
 import org.hendrix.bettercopperage.core.BCAGameRules;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -103,14 +103,14 @@ public abstract class ServerWorldMixin implements EntityView, BlockRenderView {
     }
 
     /**
-     * Get a {@link GameRules.Key Game Rule value}
+     * Get a {@link GameRule Game Rule value}
      *
-     * @param gameRule The {@link GameRules.Key Game Rule Key}
+     * @param gameRule The {@link GameRule Game Rule Key}
      * @return The {@link Boolean Game Rule value}
      */
     @Unique
-    private boolean getGameRuleValue(final GameRules.Key<GameRules.BooleanRule> gameRule) {
-        return ((ServerWorld)(Object)this).getGameRules().getBoolean(gameRule);
+    private boolean getGameRuleValue(final GameRule<Boolean> gameRule) {
+        return ((ServerWorld)(Object)this).getGameRules().getValue(gameRule);
     }
 
     /**
