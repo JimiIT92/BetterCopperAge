@@ -3,13 +3,7 @@
   "package": "org.hendrix.bettercopperage.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "AbstractFireBlockMixin",
-    "CopperGolemBrainMixin",
-    "DefaultMinecartControllerMixin",
-    "ExperimentalMinecartControllerMixin",
-    "ServerWorldMixin",
-    "ShapedRecipeMixin",
-    "WaitTaskMixin"
+
   ],
   "injectors": {
     "defaultRequire": 1

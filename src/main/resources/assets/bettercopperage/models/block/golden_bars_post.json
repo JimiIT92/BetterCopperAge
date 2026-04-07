@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/template_bars_post",
-  "render_type": "cutout",
-  "textures": {
-    "bars": "bettercopperage:block/golden_bars",
-    "edge": "bettercopperage:block/golden_bars"
-  }
-}

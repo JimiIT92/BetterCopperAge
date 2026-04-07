@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "bettercopperage:block/cut_gold",
-    "side": "bettercopperage:block/cut_gold",
-    "top": "bettercopperage:block/cut_gold"
-  }
-}

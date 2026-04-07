@@ -1,7 +1,6 @@
 package org.hendrix.bettercopperage;
 
 import net.fabricmc.api.ModInitializer;
-import org.hendrix.bettercopperage.core.*;
 
 /**
  * Hendrix's Better Copper Age
@@ -19,13 +18,7 @@ public final class BetterCopperAge implements ModInitializer {
      */
     @Override
     public void onInitialize() {
-        BCASounds.register();
-        BCAItems.register();
-        BCABlocks.register();
-        BCABlockEntityTypes.register();
-        BCAItemGroups.register();
-        BCAEvents.register();
-        BCAGameRules.register();
+
     }
 
 }
