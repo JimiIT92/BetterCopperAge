@@ -1,0 +1,8 @@
+{
+  "description": {
+    "translate": "instrument.bettercopperage.clear_temper_journey_copper_horn"
+  },
+  "range": 256.0,
+  "sound_event": "bettercopperage:copper_horn_clear_temper_journey",
+  "use_duration": 7.0
+}

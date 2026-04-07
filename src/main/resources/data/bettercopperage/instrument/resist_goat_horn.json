@@ -1,0 +1,8 @@
+{
+  "description": {
+    "translate": "instrument.bettercopperage.resist_goat_horn"
+  },
+  "range": 256.0,
+  "sound_event": "bettercopperage:goat_horn_resist",
+  "use_duration": 7.0
+}

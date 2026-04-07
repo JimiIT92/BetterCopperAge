@@ -3,7 +3,7 @@
   "package": "org.hendrix.bettercopperage.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-
+    "ShapedRecipeMixin"
   ],
   "injectors": {
     "defaultRequire": 1

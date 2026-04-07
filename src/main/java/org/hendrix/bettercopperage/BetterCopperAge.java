@@ -1,6 +1,7 @@
 package org.hendrix.bettercopperage;
 
 import net.fabricmc.api.ModInitializer;
+import org.hendrix.bettercopperage.core.BCAItems;
 import org.hendrix.bettercopperage.core.BCASounds;
 
 /**
@@ -21,6 +22,7 @@ public final class BetterCopperAge implements ModInitializer {
     @Override
     public void onInitialize() {
         BCASounds.register();
+        BCAItems.register();
     }
 
 }
