@@ -1,7 +1,7 @@
 <img src="./.docs/logo.png" alt="Better Copper Age logo">
 
-[![](https://img.shields.io/badge/Minecraft-1.21.11-success)](https://minecraft.net/)
-[![](https://img.shields.io/badge/Fabric-1.21.11--0.141.1-informational?logo=curseforge)](https://fabricmc.net/")
+[![](https://img.shields.io/badge/Minecraft-26.1-success)](https://minecraft.net/)
+[![](https://img.shields.io/badge/Fabric-26.1--0.144.3-informational?logo=curseforge)](https://fabricmc.net/")
 [![](http://cf.way2muchnoise.eu/full_1336650_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/hendrixs-better-copper-age)
 [![](https://img.shields.io/modrinth/dt/zAyCKQeH?logo=modrinth&label=Modrinth&color=darkgreen)](https://modrinth.com/mod/hendrixs-better-copper-age)
 
