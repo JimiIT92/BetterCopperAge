@@ -1,10 +1,12 @@
 package org.hendrix.bettercopperage;
 
 import net.fabricmc.api.ModInitializer;
+import org.hendrix.bettercopperage.core.BCASounds;
 
 /**
- * Hendrix's Better Copper Age
- * Make Copper Golems interact with Copper Buttons, like originally intended, and boost your builds with new decorative blocks!
+ * Hendrix's Better Copper Age.<br/>
+ * Make Copper Golems interact with Copper Buttons, like originally intended,
+ * and boost your builds with new decorative blocks!
  */
 public final class BetterCopperAge implements ModInitializer {
 
@@ -18,7 +20,7 @@ public final class BetterCopperAge implements ModInitializer {
      */
     @Override
     public void onInitialize() {
-
+        BCASounds.register();
     }
 
 }
