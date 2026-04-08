@@ -4,8 +4,10 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SpawnEggItem;
 import org.hendrix.bettercopperage.BetterCopperAge;
 import org.hendrix.bettercopperage.item.CopperHornItem;
 import org.hendrix.bettercopperage.item.WrenchItem;
@@ -22,6 +24,7 @@ public final class BCAItems {
 
     public static final Item COPPER_HORN = register("copper_horn", CopperHornItem::new, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     public static final Item WRENCH = register("wrench", WrenchItem::new, new Item.Properties().durability(512).useCooldown(1F));
+    public static final Item MANNEQUIN_SPAWN_EGG = register("mannequin_spawn_egg", SpawnEggItem::new, new Item.Properties().spawnEgg(EntityType.MANNEQUIN));
 
     //#endregion
 
