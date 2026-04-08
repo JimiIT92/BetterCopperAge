@@ -3,6 +3,7 @@ package org.hendrix.bettercopperage.core;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Instrument;
+import net.minecraft.world.level.block.Block;
 import org.hendrix.bettercopperage.BetterCopperAge;
 import org.hendrix.bettercopperage.utils.IdentifierUtils;
 
@@ -10,6 +11,26 @@ import org.hendrix.bettercopperage.utils.IdentifierUtils;
  * {@link BetterCopperAge} {@link TagKey tags}
  */
 public final class BCATags {
+
+    public static class BlockTags {
+
+        //#region Tags
+
+        public static final TagKey<Block> INVALID_FOR_WRENCH = register("invalid_for_wrench");
+
+        //#endregion
+
+        /**
+         * Register a block {@link TagKey}
+         *
+         * @param name The tag name
+         * @return The block {@link TagKey}
+         */
+        private static TagKey<Block> register(final String name) {
+            return TagKey.create(Registries.BLOCK, IdentifierUtils.modded(name));
+        }
+
+    }
 
     /**
      * {@link BetterCopperAge} instrument {@link TagKey tags}

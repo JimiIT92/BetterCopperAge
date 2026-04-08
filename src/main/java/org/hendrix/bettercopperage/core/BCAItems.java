@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import org.hendrix.bettercopperage.BetterCopperAge;
 import org.hendrix.bettercopperage.item.CopperHornItem;
+import org.hendrix.bettercopperage.item.WrenchItem;
 import org.hendrix.bettercopperage.utils.IdentifierUtils;
 
 import java.util.function.Function;
@@ -20,6 +21,7 @@ public final class BCAItems {
     //#region Items
 
     public static final Item COPPER_HORN = register("copper_horn", CopperHornItem::new, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+    public static final Item WRENCH = register("wrench", WrenchItem::new, new Item.Properties().durability(512).useCooldown(1F));
 
     //#endregion
 
