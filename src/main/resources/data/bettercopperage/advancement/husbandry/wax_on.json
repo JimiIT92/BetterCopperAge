@@ -11,7 +11,11 @@
                   "bettercopperage:copper_button",
                   "bettercopperage:exposed_copper_button",
                   "bettercopperage:weathered_copper_button",
-                  "bettercopperage:oxidized_copper_button"
+                  "bettercopperage:oxidized_copper_button",
+                  "bettercopperage:medium_weighted_pressure_plate",
+                  "bettercopperage:exposed_medium_weighted_pressure_plate",
+                  "bettercopperage:weathered_medium_weighted_pressure_plate",
+                  "bettercopperage:oxidized_medium_weighted_pressure_plate"
                 ]
               }
             }

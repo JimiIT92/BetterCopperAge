@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#bettercopperage:copper_buttons",
     "#bettercopperage:medium_weighted_pressure_plates"
   ]
 }
