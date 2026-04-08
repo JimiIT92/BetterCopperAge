@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "bettercopperage:copper_button",
+    "bettercopperage:exposed_copper_button",
+    "bettercopperage:weathered_copper_button",
+    "bettercopperage:oxidized_copper_button",
+    "bettercopperage:waxed_copper_button",
+    "bettercopperage:waxed_exposed_copper_button",
+    "bettercopperage:waxed_weathered_copper_button",
+    "bettercopperage:waxed_oxidized_copper_button"
+  ]
+}

@@ -55,7 +55,7 @@ public final class BCAEvents {
      * @param entityHitResult The {@link EntityHitResult}
      * @return The {@link InteractionResult}
      */
-    private static InteractionResult wrenchBlockEntityInteract(final Player player, final Level level, final InteractionHand interactionHand, final Entity entity, @Nullable final EntityHitResult entityHitResult) {
+    private static InteractionResult wrenchBlockEntityInteract(final Player player, final Level level, final InteractionHand interactionHand, final Entity entity, final @Nullable EntityHitResult entityHitResult) {
         final ItemStack itemStack = player.getItemInHand(interactionHand);
         if(itemStack.getItem() instanceof WrenchItem wrench) {
             if(entity instanceof  ArmorStand armorStand) {

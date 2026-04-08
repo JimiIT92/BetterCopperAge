@@ -1,0 +1,39 @@
+{
+  "criteria": {
+    "wax_off": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "bettercopperage:waxed_copper_button",
+                  "bettercopperage:waxed_exposed_copper_button",
+                  "bettercopperage:waxed_weathered_copper_button",
+                  "bettercopperage:waxed_oxidized_copper_button"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "#minecraft:axes"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "rewards": {
+    "function": "bettercopperage:wax_off"
+  },
+  "requirements": [
+    [
+      "wax_off"
+    ]
+  ],
+  "sends_telemetry_event": false
+}
