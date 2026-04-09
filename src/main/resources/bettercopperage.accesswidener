@@ -2,3 +2,4 @@ accessWidener v2 official
 accessible field net/minecraft/world/entity/vehicle/minecart/MinecartBehavior minecart Lnet/minecraft/world/entity/vehicle/minecart/AbstractMinecart;
 accessible class net/minecraft/world/entity/vehicle/minecart/NewMinecartBehavior$TrackIteration
 accessible field net/minecraft/world/entity/vehicle/minecart/NewMinecartBehavior$TrackIteration hasBoosted Z
+accessible method net/minecraft/world/level/block/BaseFireBlock getState (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;

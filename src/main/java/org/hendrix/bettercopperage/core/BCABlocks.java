@@ -7,11 +7,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.WeatheringCopper;
-import net.minecraft.world.level.block.WeatheringCopperBlocks;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import org.hendrix.bettercopperage.BetterCopperAge;
 import org.hendrix.bettercopperage.block.*;
@@ -56,6 +54,11 @@ public final class BCABlocks {
     public static final Block WAXED_EXPOSED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.EXPOSED, true);
     public static final Block WAXED_WEATHERED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.WEATHERED, true);
     public static final Block WAXED_OXIDIZED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.OXIDIZED, true);
+
+    public static final Block COPPER_FIRE = registerBlockWithoutBlockItem("copper_fire", CopperFireBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.FIRE)
+            .mapColor(MapColor.EMERALD)
+            .lightLevel(_ -> 13)
+    );
 
     //#endregion
 
