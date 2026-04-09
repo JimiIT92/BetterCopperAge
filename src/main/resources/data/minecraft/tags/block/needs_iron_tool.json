@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "bettercopperage:chiseled_gold",
+    "bettercopperage:golden_grate",
+    "bettercopperage:cut_gold",
+    "bettercopperage:cut_golden_slab",
+    "bettercopperage:cut_golden_stairs",
+    "bettercopperage:golden_bars",
+    "bettercopperage:golden_chain",
+    "bettercopperage:golden_trapdoor"
+  ]
+}

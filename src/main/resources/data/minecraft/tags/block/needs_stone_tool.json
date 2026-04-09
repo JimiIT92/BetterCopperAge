@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "bettercopperage:chiseled_iron",
+    "bettercopperage:iron_grate",
+    "bettercopperage:cut_iron",
+    "bettercopperage:cut_iron_slab",
+    "bettercopperage:cut_iron_stairs"
+  ]
+}

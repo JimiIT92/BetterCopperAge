@@ -9,6 +9,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import org.hendrix.bettercopperage.BetterCopperAge;
@@ -55,9 +56,56 @@ public final class BCABlocks {
     public static final Block WAXED_WEATHERED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.WEATHERED, true);
     public static final Block WAXED_OXIDIZED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.OXIDIZED, true);
 
-    public static final Block COPPER_FIRE = registerBlockWithoutBlockItem("copper_fire", CopperFireBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.FIRE)
-            .mapColor(MapColor.EMERALD)
-            .lightLevel(_ -> 13)
+    public static final Block COPPER_FIRE = registerBlockWithoutBlockItem(
+            "copper_fire",
+            CopperFireBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.FIRE)
+                    .mapColor(MapColor.EMERALD)
+                    .lightLevel(_ -> 13)
+    );
+
+    public static final Block CHISELED_IRON = registerChiseledBlock("iron", Blocks.IRON_BLOCK);
+    public static final Block IRON_GRATE = registerGrateBlock("iron", Blocks.IRON_BLOCK);
+    public static final Block CUT_IRON = registerCutBlock("iron", Blocks.IRON_BLOCK);
+    public static final Block CUT_IRON_SLAB = registerCutSlab("iron", CUT_IRON);
+    public static final Block CUT_IRON_STAIRS = registerCutStairs("iron", CUT_IRON);
+    public static final Block IRON_BUTTON = registerButton("iron", BlockSetType.IRON, 15);
+
+    public static final Block CHISELED_GOLD = registerChiseledBlock("gold", Blocks.GOLD_BLOCK);
+    public static final Block GOLDEN_GRATE = registerGrateBlock("golden", Blocks.GOLD_BLOCK);
+    public static final Block CUT_GOLD = registerCutBlock("gold", Blocks.GOLD_BLOCK);
+    public static final Block CUT_GOLDEN_SLAB = registerCutSlab("golden", CUT_GOLD);
+    public static final Block CUT_GOLDEN_STAIRS = registerCutStairs("golden", CUT_GOLD);
+    public static final Block GOLD_BUTTON = registerButton("gold", BlockSetType.GOLD, 5);
+    public static final Block GOLDEN_BARS = register(
+            "golden_bars",
+            IronBarsBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS)
+                    .sound(SoundType.METAL)
+    );
+    public static final Block GOLDEN_CHAIN = register(
+            "golden_chain",
+            ChainBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_CHAIN)
+    );
+    public static final Block GOLDEN_DOOR = register(
+            "golden_door",
+            properties -> new DoorBlock(BlockSetType.GOLD, properties),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR)
+                    .mapColor(MapColor.GOLD)
+    );
+    public static final Block GOLDEN_TRAPDOOR = register(
+            "golden_trapdoor",
+            properties -> new TrapDoorBlock(BlockSetType.GOLD, properties),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR)
+                    .mapColor(MapColor.GOLD)
+    );
+    public static final Block GOLDEN_LANTERN = register(
+            "golden_lantern",
+            LanternBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN)
+                    .mapColor(MapColor.GOLD)
+                    .strength(5F)
     );
 
     //#endregion
@@ -70,9 +118,11 @@ public final class BCABlocks {
      * @return The registered {@link Block}
      */
     private static Block registerCopperButton(final WeatheringCopper.WeatherState weatherState, final boolean isWaxed) {
-        final String name = BlockUtils.copperBlockName(weatherState, isWaxed, "button");
-        final BlockBehaviour.Properties properties = buttonProperties();
-        return register(name, _ -> isWaxed ? new CopperButtonBlock(weatherState, properties) : new OxidizableCopperButtonBlock(weatherState, properties), properties);
+        return register(
+                BlockUtils.copperBlockName(weatherState, isWaxed, "button"),
+                properties -> isWaxed ? new CopperButtonBlock(weatherState, properties) : new OxidizableCopperButtonBlock(weatherState, properties),
+                buttonProperties()
+        );
     }
 
     /**
@@ -83,14 +133,16 @@ public final class BCABlocks {
      * @return The registered {@link Block}
      */
     private static Block registerMediumWeightedPressurePlate(final WeatheringCopper.WeatherState weatherState, final boolean isWaxed) {
-        final String name = BlockUtils.oxidizableBlockName(weatherState, isWaxed, "medium_weighted", "pressure_plate");
-        final BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()
-                .mapColor(BlockUtils.weatherStateMapColor(weatherState))
-                .forceSolidOn()
-                .noCollision()
-                .strength(0.5F)
-                .pushReaction(PushReaction.DESTROY);
-        return register(name, _ -> isWaxed ? new MediumWeightedPressurePlateBlock(weatherState, properties) : new OxidizableMediumWeightedPressurePlateBlock(weatherState, properties), properties);
+        return register(
+                BlockUtils.oxidizableBlockName(weatherState, isWaxed, "medium_weighted", "pressure_plate"),
+                properties -> isWaxed ? new MediumWeightedPressurePlateBlock(weatherState, properties) : new OxidizableMediumWeightedPressurePlateBlock(weatherState, properties),
+                BlockBehaviour.Properties.of()
+                        .mapColor(BlockUtils.weatherStateMapColor(weatherState))
+                        .forceSolidOn()
+                        .noCollision()
+                        .strength(0.5F)
+                        .pushReaction(PushReaction.DESTROY)
+        );
     }
 
     /**
@@ -101,12 +153,107 @@ public final class BCABlocks {
      * @return The registered {@link Block}
      */
     private static Block registerCopperRail(final WeatheringCopper.WeatherState weatherState, final boolean isWaxed) {
-        final String name = BlockUtils.copperBlockName(weatherState, isWaxed, "rail");
-        final BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()
-                .noCollision()
-                .strength(0.7F)
-                .sound(SoundType.METAL);
-        return register(name, _ -> isWaxed ? new CopperRailBlock(weatherState, properties) : new OxidizableCopperRailBlock(weatherState, properties), properties);
+        return register(
+                BlockUtils.copperBlockName(weatherState, isWaxed, "rail"),
+                properties -> isWaxed ? new CopperRailBlock(weatherState, properties) : new OxidizableCopperRailBlock(weatherState, properties),
+                BlockBehaviour.Properties.of()
+                        .noCollision()
+                        .strength(0.7F)
+                        .sound(SoundType.METAL)
+        );
+    }
+
+    /**
+     * Register a chiseled block
+     *
+     * @param materialName The name of the chiseled block material
+     * @param sourceBlock The source {@link Block}
+     * @return The registered {@link Block}
+     */
+    private static Block registerChiseledBlock(final String materialName, final Block sourceBlock) {
+        return register(
+                "chiseled_" + materialName,
+                Block::new,
+                BlockBehaviour.Properties.ofFullCopy(sourceBlock)
+        );
+    }
+
+    /**
+     * Register a grate block
+     *
+     * @param materialName The name of the grate block material
+     * @param sourceBlock The source {@link Block}
+     * @return The registered {@link Block}
+     */
+    private static Block registerGrateBlock(final String materialName, final Block sourceBlock) {
+        return register(
+                materialName + "_grate",
+                WaterloggedTransparentBlock::new,
+                BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_GRATE)
+                        .mapColor(sourceBlock.defaultMapColor())
+                        .sound(sourceBlock.defaultBlockState().getSoundType())
+        );
+    }
+
+    /**
+     * Register a cut block
+     *
+     * @param materialName The name of the cut block material
+     * @param sourceBlock The source {@link Block}
+     * @return The registered {@link Block}
+     */
+    private static Block registerCutBlock(final String materialName, final Block sourceBlock) {
+        return register(
+                "cut_" + materialName,
+                Block::new,
+                BlockBehaviour.Properties.ofFullCopy(sourceBlock)
+        );
+    }
+
+    /**
+     * Register a cut slab
+     *
+     * @param materialName The name of the cut slab material
+     * @param sourceBlock The source {@link Block}
+     * @return The registered {@link Block}
+     */
+    private static Block registerCutSlab(final String materialName, final Block sourceBlock) {
+        return register(
+                "cut_" + materialName + "_slab",
+                SlabBlock::new,
+                BlockBehaviour.Properties.ofFullCopy(sourceBlock)
+        );
+    }
+
+    /**
+     * Register some cut stairs
+     *
+     * @param materialName The name of the cut stairs material
+     * @param sourceBlock The source {@link Block}
+     * @return The registered {@link Block}
+     */
+    private static Block registerCutStairs(final String materialName, final Block sourceBlock) {
+        return register(
+                "cut_" + materialName + "_stairs",
+                properties -> new StairBlock(sourceBlock.defaultBlockState(), properties),
+                BlockBehaviour.Properties.ofFullCopy(sourceBlock)
+        );
+    }
+
+    /**
+     * Register a button
+     *
+     * @param materialName The name of the button material
+     * @param blockSetType The {@link BlockSetType}
+     * @param pressTicks The button press ticks
+     * @return The registered {@link Block}
+     */
+    private static Block registerButton(final String materialName, final BlockSetType blockSetType, final int pressTicks) {
+        return register(
+                materialName + "_button",
+                properties -> new ButtonBlock(blockSetType, pressTicks, properties),
+                buttonProperties()
+        );
     }
 
     /**

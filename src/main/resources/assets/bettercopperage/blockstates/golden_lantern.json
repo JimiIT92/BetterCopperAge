@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "bettercopperage:block/golden_lantern"
+    },
+    "hanging=true": {
+      "model": "bettercopperage:block/golden_lantern_hanging"
+    }
+  }
+}
