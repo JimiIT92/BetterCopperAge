@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * Mixin for the {@link ShapedRecipe class}
+ * Mixin for the {@link ShapedRecipe} class
  */
 @Mixin(ShapedRecipe.class)
 public final class ShapedRecipeMixin {

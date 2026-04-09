@@ -45,7 +45,7 @@ public final class OxidizableMediumWeightedPressurePlateBlock extends MediumWeig
      */
     @Override
     protected boolean isRandomlyTicking(final @NonNull BlockState state) {
-        return !WeatherState.OXIDIZED.equals(this.weatherState);
+        return !WeatherState.OXIDIZED.equals(this.getWeatherState());
     }
 
     /**
@@ -55,7 +55,7 @@ public final class OxidizableMediumWeightedPressurePlateBlock extends MediumWeig
      */
     @Override
     public WeatherState getAge() {
-        return this.weatherState;
+        return this.getWeatherState();
     }
 
 }

@@ -15,7 +15,11 @@
                   "bettercopperage:medium_weighted_pressure_plate",
                   "bettercopperage:exposed_medium_weighted_pressure_plate",
                   "bettercopperage:weathered_medium_weighted_pressure_plate",
-                  "bettercopperage:oxidized_medium_weighted_pressure_plate"
+                  "bettercopperage:oxidized_medium_weighted_pressure_plate",
+                  "bettercopperage:copper_rail",
+                  "bettercopperage:exposed_copper_rail",
+                  "bettercopperage:weathered_copper_rail",
+                  "bettercopperage:oxidized_copper_rail"
                 ]
               }
             }

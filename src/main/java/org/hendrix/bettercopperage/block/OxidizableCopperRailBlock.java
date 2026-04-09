@@ -9,18 +9,17 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jspecify.annotations.NonNull;
 
 /**
- * Implementation class for a copper button that can oxidize
+ * Implementation class for a copper rail that can oxidize
  */
-public final class OxidizableCopperButtonBlock extends CopperButtonBlock implements WeatheringCopper {
+public final class OxidizableCopperRailBlock extends CopperRailBlock implements WeatheringCopper {
 
     /**
-     * Constructor. Set the {@link BlockBehaviour.Properties} and the press ticks
-     * based on the {@link WeatherState}
+     * Constructor. Set the {@link BlockBehaviour.Properties}
      *
      * @param weatherState The {@link WeatherState}
      * @param properties   The {@link BlockBehaviour.Properties}
      */
-    public OxidizableCopperButtonBlock(WeatherState weatherState, Properties properties) {
+    public OxidizableCopperRailBlock(final WeatherState weatherState, final Properties properties) {
         super(weatherState, properties);
     }
 

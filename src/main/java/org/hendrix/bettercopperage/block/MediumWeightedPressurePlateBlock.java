@@ -62,4 +62,13 @@ public class MediumWeightedPressurePlateBlock extends WeightedPressurePlateBlock
             case OXIDIZED -> 50;
         };
     }
+
+    /**
+     * Get the {@link WeatheringCopper.WeatherState}
+     *
+     * @return The {@link WeatheringCopper.WeatherState}
+     */
+    public WeatheringCopper.WeatherState getWeatherState() {
+        return this.weatherState;
+    }
 }

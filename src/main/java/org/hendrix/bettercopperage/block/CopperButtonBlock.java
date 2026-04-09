@@ -16,6 +16,11 @@ import org.jspecify.annotations.NonNull;
 public class CopperButtonBlock extends ButtonBlock {
 
     /**
+     * The {@link WeatheringCopper.WeatherState}
+     */
+    private final WeatheringCopper.WeatherState weatherState;
+
+    /**
      * Constructor. Set the {@link BlockBehaviour.Properties} and the press ticks
      * based on the {@link WeatheringCopper.WeatherState}
      *
@@ -24,6 +29,7 @@ public class CopperButtonBlock extends ButtonBlock {
      */
     public CopperButtonBlock(final WeatheringCopper.WeatherState weatherState, final Properties properties) {
         super(BlockSetType.COPPER, getPressTicks(weatherState), properties);
+        this.weatherState = weatherState;
     }
 
     /**
@@ -56,6 +62,15 @@ public class CopperButtonBlock extends ButtonBlock {
             level.setBlockAndUpdate(pos, state.setValue(POWERED, false));
         }
         super.onPlace(state, level, pos, oldState, movedByPiston);
+    }
+
+    /**
+     * Get the {@link WeatheringCopper.WeatherState}
+     *
+     * @return The {@link WeatheringCopper.WeatherState}
+     */
+    public WeatheringCopper.WeatherState getWeatherState() {
+        return this.weatherState;
     }
 
 }

@@ -3,6 +3,8 @@
   "package": "org.hendrix.bettercopperage.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "NewMinecartBehaviorMixin",
+    "OldMinecartBehaviorMixin",
     "ShapedRecipeMixin"
   ],
   "injectors": {

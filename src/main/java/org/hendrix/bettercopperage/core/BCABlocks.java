@@ -8,15 +8,13 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.WeatheringCopperBlocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
 import org.hendrix.bettercopperage.BetterCopperAge;
-import org.hendrix.bettercopperage.block.CopperButtonBlock;
-import org.hendrix.bettercopperage.block.MediumWeightedPressurePlateBlock;
-import org.hendrix.bettercopperage.block.OxidizableCopperButtonBlock;
-import org.hendrix.bettercopperage.block.OxidizableMediumWeightedPressurePlateBlock;
+import org.hendrix.bettercopperage.block.*;
 import org.hendrix.bettercopperage.utils.BlockUtils;
 import org.hendrix.bettercopperage.utils.IdentifierUtils;
 
@@ -49,6 +47,16 @@ public final class BCABlocks {
     public static final Block WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate(WeatheringCopper.WeatherState.WEATHERED, true);
     public static final Block WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate(WeatheringCopper.WeatherState.OXIDIZED, true);
 
+    public static final Block COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.UNAFFECTED, false);
+    public static final Block EXPOSED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.EXPOSED, false);
+    public static final Block WEATHERED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.WEATHERED, false);
+    public static final Block OXIDIZED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.OXIDIZED, false);
+
+    public static final Block WAXED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.UNAFFECTED, true);
+    public static final Block WAXED_EXPOSED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.EXPOSED, true);
+    public static final Block WAXED_WEATHERED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.WEATHERED, true);
+    public static final Block WAXED_OXIDIZED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.OXIDIZED, true);
+
     //#endregion
 
     /**
@@ -80,6 +88,22 @@ public final class BCABlocks {
                 .strength(0.5F)
                 .pushReaction(PushReaction.DESTROY);
         return register(name, _ -> isWaxed ? new MediumWeightedPressurePlateBlock(weatherState, properties) : new OxidizableMediumWeightedPressurePlateBlock(weatherState, properties), properties);
+    }
+
+    /**
+     * Register a copper rail
+     *
+     * @param weatherState The {@link WeatheringCopper.WeatherState}
+     * @param isWaxed Whether the block is waxed or not
+     * @return The registered {@link Block}
+     */
+    private static Block registerCopperRail(final WeatheringCopper.WeatherState weatherState, final boolean isWaxed) {
+        final String name = BlockUtils.copperBlockName(weatherState, isWaxed, "rail");
+        final BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()
+                .noCollision()
+                .strength(0.7F)
+                .sound(SoundType.METAL);
+        return register(name, _ -> isWaxed ? new CopperRailBlock(weatherState, properties) : new OxidizableCopperRailBlock(weatherState, properties), properties);
     }
 
     /**
@@ -147,6 +171,16 @@ public final class BCABlocks {
                 WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
                 WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
                 WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE
+        ));
+        OxidizableBlocksRegistry.registerWeatheringCopperBlocks(new WeatheringCopperBlocks(
+                COPPER_RAIL,
+                EXPOSED_COPPER_RAIL,
+                WEATHERED_COPPER_RAIL,
+                OXIDIZED_COPPER_RAIL,
+                WAXED_COPPER_RAIL,
+                WAXED_EXPOSED_COPPER_RAIL,
+                WAXED_WEATHERED_COPPER_RAIL,
+                WAXED_OXIDIZED_COPPER_RAIL
         ));
     }
 
