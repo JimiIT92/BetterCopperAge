@@ -3,3 +3,4 @@ accessible field net/minecraft/world/entity/vehicle/minecart/MinecartBehavior mi
 accessible class net/minecraft/world/entity/vehicle/minecart/NewMinecartBehavior$TrackIteration
 accessible field net/minecraft/world/entity/vehicle/minecart/NewMinecartBehavior$TrackIteration hasBoosted Z
 accessible method net/minecraft/world/level/block/BaseFireBlock getState (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
+accessible field net/minecraft/world/level/block/entity/ShelfBlockEntity alignItemsToBottom Z
