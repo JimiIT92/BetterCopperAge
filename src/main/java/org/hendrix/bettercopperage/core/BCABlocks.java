@@ -64,6 +64,13 @@ public final class BCABlocks {
                     .lightLevel(_ -> 13)
     );
 
+    public static final Block COPPER_CAMPFIRE = register(
+            "copper_campfire",
+            CopperCampfireBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE)
+                    .lightLevel(_ -> 13)
+    );
+
     public static final Block CHISELED_IRON = registerChiseledBlock("iron", Blocks.IRON_BLOCK);
     public static final Block IRON_GRATE = registerGrateBlock("iron", Blocks.IRON_BLOCK);
     public static final Block CUT_IRON = registerCutBlock("iron", Blocks.IRON_BLOCK);

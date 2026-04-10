@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_campfire",
+  "render_type": "cutout",
+  "textures": {
+    "fire": "bettercopperage:block/copper_campfire_fire",
+    "lit_log": "bettercopperage:block/copper_campfire_log_lit"
+  }
+}
