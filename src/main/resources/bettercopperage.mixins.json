@@ -8,6 +8,7 @@
     "DdoNothingMixin",
     "NewMinecartBehaviorMixin",
     "OldMinecartBehaviorMixin",
+    "ServerLevelMixin",
     "ShapedRecipeMixin",
     "TransportItemsBetweenContainersMixin"
   ],
