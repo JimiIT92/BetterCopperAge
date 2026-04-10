@@ -25,7 +25,7 @@ public final class BetterCopperAge implements ModInitializer {
         BCABlocks.register();
         BCABlockEntityTypes.register();
         BCACreativeModeTabs.register();
-
+        BCAGameRules.register();
         BCAEvents.register();
     }
 
