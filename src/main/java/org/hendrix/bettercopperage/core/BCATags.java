@@ -18,6 +18,7 @@ public final class BCATags {
 
         public static final TagKey<Block> INVALID_FOR_WRENCH = register("invalid_for_wrench");
         public static final TagKey<Block> COPPER_FIRE_BASE_BLOCKS = register("copper_fire_base_blocks");
+        public static final TagKey<Block> COPPER_GOLEM_OUTPUT_CONTAINERS = register("copper_golem_output_containers");
 
         //#endregion
 

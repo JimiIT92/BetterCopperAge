@@ -1,6 +1,7 @@
 package org.hendrix.bettercopperage;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.world.entity.animal.golem.CopperGolemAi;
 import org.hendrix.bettercopperage.core.*;
 
 /**
@@ -27,6 +28,7 @@ public final class BetterCopperAge implements ModInitializer {
         BCACreativeModeTabs.register();
         BCAGameRules.register();
         BCAEvents.register();
+        CopperGolemAi.TRANSPORT_ITEM_DESTINATION_BLOCK = (block) -> block.is(BCATags.BlockTags.COPPER_GOLEM_OUTPUT_CONTAINERS);
     }
 
 }

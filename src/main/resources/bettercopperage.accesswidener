@@ -4,3 +4,11 @@ accessible class net/minecraft/world/entity/vehicle/minecart/NewMinecartBehavior
 accessible field net/minecraft/world/entity/vehicle/minecart/NewMinecartBehavior$TrackIteration hasBoosted Z
 accessible method net/minecraft/world/level/block/BaseFireBlock getState (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
 accessible field net/minecraft/world/level/block/entity/ShelfBlockEntity alignItemsToBottom Z
+accessible field net/minecraft/world/entity/animal/golem/CopperGolemAi TRANSPORT_ITEM_DESTINATION_BLOCK Ljava/util/function/Predicate;
+mutable field net/minecraft/world/entity/animal/golem/CopperGolemAi TRANSPORT_ITEM_DESTINATION_BLOCK Ljava/util/function/Predicate;
+accessible method net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers getTargetSearchArea (Lnet/minecraft/world/entity/PathfinderMob;)Lnet/minecraft/world/phys/AABB;
+accessible method net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers getVisitedPositions (Lnet/minecraft/world/entity/PathfinderMob;)Ljava/util/Set;
+accessible method net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers getUnreachablePositions (Lnet/minecraft/world/entity/PathfinderMob;)Ljava/util/Set;
+accessible method net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers getHorizontalSearchDistance (Lnet/minecraft/world/entity/PathfinderMob;)I
+accessible method net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers isTargetValidToPick (Lnet/minecraft/world/entity/PathfinderMob;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/entity/BlockEntity;Ljava/util/Set;Ljava/util/Set;Lnet/minecraft/world/phys/AABB;)Lnet/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers$TransportItemTarget;
+accessible method net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers isPickingUpItems (Lnet/minecraft/world/entity/PathfinderMob;)Z
