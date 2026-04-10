@@ -5,6 +5,7 @@
   "mixins": [
     "BaseFireBlockMixin",
     "CopperGolemAiMixin",
+    "DdoNothingMixin",
     "NewMinecartBehaviorMixin",
     "OldMinecartBehaviorMixin",
     "ShapedRecipeMixin",
