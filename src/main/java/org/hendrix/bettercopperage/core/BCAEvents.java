@@ -23,7 +23,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ShelfBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.minecraft.world.level.block.entity.ShelfBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -98,7 +98,7 @@ public final class BCAEvents {
         final BlockPos pos = blockHitResult.getBlockPos();
         final BlockState state = level.getBlockState(pos);
         if(player.isShiftKeyDown() && player.getItemInHand(interactionHand).isEmpty() && state.getBlock() instanceof ShelfBlock) {
-            final Optional<ShelfBlockEntity> optionalShelfBlockEntity = level.getBlockEntity(pos, BlockEntityType.SHELF);
+            final Optional<ShelfBlockEntity> optionalShelfBlockEntity = level.getBlockEntity(pos, BlockEntityTypes.SHELF);
             if(optionalShelfBlockEntity.isPresent()) {
                 final ShelfBlockEntity shelfBlockEntity = optionalShelfBlockEntity.get();
                 if(shelfBlockEntity.stillValid(player)) {

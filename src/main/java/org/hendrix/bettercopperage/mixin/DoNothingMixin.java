@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * Mixin for the {@link DoNothing} class
  */
 @Mixin(DoNothing.class)
-public final class DdoNothingMixin {
+public final class DoNothingMixin {
 
     /**
      * Make a copper golem interact with a {@link CopperButtonBlock} if it stops nearby

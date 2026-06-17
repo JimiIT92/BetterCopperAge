@@ -12,6 +12,7 @@ import net.minecraft.tags.InstrumentTags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.InstrumentComponent;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import org.hendrix.bettercopperage.BetterCopperAge;
 import org.hendrix.bettercopperage.utils.IdentifierUtils;
@@ -28,35 +29,20 @@ public final class BCACreativeModeTabs {
     public static final CreativeModeTab BETTER_COPPER_AGE = register(
             BetterCopperAge.MOD_ID,
             FabricCreativeModeTab.builder()
-                    .icon(() -> new ItemStack(Blocks.COPPER_GOLEM_STATUE))
+                    .icon(() -> new ItemStack(Blocks.COPPER_GOLEM_STATUE.weathering().unaffected()))
                     .title(Component.translatable("creativeTab." + BetterCopperAge.MOD_ID + "." + BetterCopperAge.MOD_ID))
                     .displayItems((params, output) -> {
                         addContent(
                                 output,
-                                BCABlocks.COPPER_BUTTON,
-                                BCABlocks.EXPOSED_COPPER_BUTTON,
-                                BCABlocks.WEATHERED_COPPER_BUTTON,
-                                BCABlocks.OXIDIZED_COPPER_BUTTON,
-                                BCABlocks.WAXED_COPPER_BUTTON,
-                                BCABlocks.WAXED_EXPOSED_COPPER_BUTTON,
-                                BCABlocks.WAXED_WEATHERED_COPPER_BUTTON,
-                                BCABlocks.WAXED_OXIDIZED_COPPER_BUTTON,
-                                BCABlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                                BCABlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                                BCABlocks.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                                BCABlocks.OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                                BCABlocks.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                                BCABlocks.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                                BCABlocks.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                                BCABlocks.WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                                BCABlocks.COPPER_RAIL,
-                                BCABlocks.EXPOSED_COPPER_RAIL,
-                                BCABlocks.WEATHERED_COPPER_RAIL,
-                                BCABlocks.OXIDIZED_COPPER_RAIL,
-                                BCABlocks.WAXED_COPPER_RAIL,
-                                BCABlocks.WAXED_EXPOSED_COPPER_RAIL,
-                                BCABlocks.WAXED_WEATHERED_COPPER_RAIL,
-                                BCABlocks.WAXED_OXIDIZED_COPPER_RAIL,
+                                BCABlocks.COPPER_BUTTON.asList().toArray(new Block[0]));
+                        addContent(
+                                output,
+                                BCABlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE.asList().toArray(new Block[0]));
+                        addContent(
+                                output,
+                                BCABlocks.COPPER_RAIL.asList().toArray(new Block[0]));
+                        addContent(
+                                output,
                                 BCABlocks.COPPER_CAMPFIRE,
                                 BCABlocks.CHISELED_IRON,
                                 BCABlocks.IRON_GRATE,

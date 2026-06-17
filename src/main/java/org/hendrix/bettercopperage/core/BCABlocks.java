@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -26,35 +27,11 @@ public final class BCABlocks {
 
     //#region Blocks
 
-    public static final Block COPPER_BUTTON = registerCopperButton(WeatheringCopper.WeatherState.UNAFFECTED, false);
-    public static final Block EXPOSED_COPPER_BUTTON = registerCopperButton(WeatheringCopper.WeatherState.EXPOSED, false);
-    public static final Block WEATHERED_COPPER_BUTTON = registerCopperButton(WeatheringCopper.WeatherState.WEATHERED, false);
-    public static final Block OXIDIZED_COPPER_BUTTON = registerCopperButton(WeatheringCopper.WeatherState.OXIDIZED, false);
+    public static final WeatheringCopperCollection<Block> COPPER_BUTTON = registerCopperButton();
 
-    public static final Block WAXED_COPPER_BUTTON = registerCopperButton(WeatheringCopper.WeatherState.UNAFFECTED, true);
-    public static final Block WAXED_EXPOSED_COPPER_BUTTON = registerCopperButton(WeatheringCopper.WeatherState.EXPOSED, true);
-    public static final Block WAXED_WEATHERED_COPPER_BUTTON = registerCopperButton(WeatheringCopper.WeatherState.WEATHERED, true);
-    public static final Block WAXED_OXIDIZED_COPPER_BUTTON = registerCopperButton(WeatheringCopper.WeatherState.OXIDIZED, true);
+    public static final WeatheringCopperCollection<Block> MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate();
 
-    public static final Block MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate(WeatheringCopper.WeatherState.UNAFFECTED, false);
-    public static final Block EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate(WeatheringCopper.WeatherState.EXPOSED, false);
-    public static final Block WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate(WeatheringCopper.WeatherState.WEATHERED, false);
-    public static final Block OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate(WeatheringCopper.WeatherState.OXIDIZED, false);
-
-    public static final Block WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate(WeatheringCopper.WeatherState.UNAFFECTED, true);
-    public static final Block WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate(WeatheringCopper.WeatherState.EXPOSED, true);
-    public static final Block WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate(WeatheringCopper.WeatherState.WEATHERED, true);
-    public static final Block WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerMediumWeightedPressurePlate(WeatheringCopper.WeatherState.OXIDIZED, true);
-
-    public static final Block COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.UNAFFECTED, false);
-    public static final Block EXPOSED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.EXPOSED, false);
-    public static final Block WEATHERED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.WEATHERED, false);
-    public static final Block OXIDIZED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.OXIDIZED, false);
-
-    public static final Block WAXED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.UNAFFECTED, true);
-    public static final Block WAXED_EXPOSED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.EXPOSED, true);
-    public static final Block WAXED_WEATHERED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.WEATHERED, true);
-    public static final Block WAXED_OXIDIZED_COPPER_RAIL = registerCopperRail(WeatheringCopper.WeatherState.OXIDIZED, true);
+    public static final WeatheringCopperCollection<Block> COPPER_RAIL = registerCopperRail();
 
     public static final Block COPPER_FIRE = registerBlockWithoutBlockItem(
             "copper_fire",
@@ -120,30 +97,30 @@ public final class BCABlocks {
     /**
      * Register a copper button
      *
-     * @param weatherState The {@link WeatheringCopper.WeatherState}
-     * @param isWaxed Whether the block is waxed or not
      * @return The registered {@link Block}
      */
-    private static Block registerCopperButton(final WeatheringCopper.WeatherState weatherState, final boolean isWaxed) {
-        return register(
-                BlockUtils.copperBlockName(weatherState, isWaxed, "button"),
-                properties -> isWaxed ? new CopperButtonBlock(weatherState, properties) : new OxidizableCopperButtonBlock(weatherState, properties),
-                buttonProperties()
+    private static WeatheringCopperCollection<Block> registerCopperButton() {
+        return WeatheringCopperCollection.registerBlocks(
+                WeatheringCopperCollection.prefixWithState(WeatheringCopperCollection.create("copper_button")).map(BlockItemId::create),
+                (blockItemId, blockFactory, properties) -> register(blockItemId.block().identifier().getPath(), blockFactory, properties),
+                CopperButtonBlock::new,
+                OxidizableCopperButtonBlock::new,
+                _ -> buttonProperties()
         );
     }
 
     /**
      * Register a medium weighted pressure plate
      *
-     * @param weatherState The {@link WeatheringCopper.WeatherState}
-     * @param isWaxed Whether the block is waxed or not
      * @return The registered {@link Block}
      */
-    private static Block registerMediumWeightedPressurePlate(final WeatheringCopper.WeatherState weatherState, final boolean isWaxed) {
-        return register(
-                BlockUtils.oxidizableBlockName(weatherState, isWaxed, "medium_weighted", "pressure_plate"),
-                properties -> isWaxed ? new MediumWeightedPressurePlateBlock(weatherState, properties) : new OxidizableMediumWeightedPressurePlateBlock(weatherState, properties),
-                BlockBehaviour.Properties.of()
+    private static WeatheringCopperCollection<Block> registerMediumWeightedPressurePlate() {
+        return WeatheringCopperCollection.registerBlocks(
+                WeatheringCopperCollection.prefixWithState(WeatheringCopperCollection.create("medium_weighted_pressure_plate")).map(BlockItemId::create),
+                (blockItemId, blockFactory, properties) -> register(blockItemId.block().identifier().getPath(), blockFactory, properties),
+                MediumWeightedPressurePlateBlock::new,
+                OxidizableMediumWeightedPressurePlateBlock::new,
+                weatherState -> BlockBehaviour.Properties.of()
                         .mapColor(BlockUtils.weatherStateMapColor(weatherState))
                         .forceSolidOn()
                         .noCollision()
@@ -155,15 +132,15 @@ public final class BCABlocks {
     /**
      * Register a copper rail
      *
-     * @param weatherState The {@link WeatheringCopper.WeatherState}
-     * @param isWaxed Whether the block is waxed or not
      * @return The registered {@link Block}
      */
-    private static Block registerCopperRail(final WeatheringCopper.WeatherState weatherState, final boolean isWaxed) {
-        return register(
-                BlockUtils.copperBlockName(weatherState, isWaxed, "rail"),
-                properties -> isWaxed ? new CopperRailBlock(weatherState, properties) : new OxidizableCopperRailBlock(weatherState, properties),
-                BlockBehaviour.Properties.of()
+    private static WeatheringCopperCollection<Block> registerCopperRail() {
+        return WeatheringCopperCollection.registerBlocks(
+                WeatheringCopperCollection.prefixWithState(WeatheringCopperCollection.create("copper_rail")).map(BlockItemId::create),
+                (blockItemId, blockFactory, properties) -> register(blockItemId.block().identifier().getPath(), blockFactory, properties),
+                CopperRailBlock::new,
+                OxidizableCopperRailBlock::new,
+                _ -> BlockBehaviour.Properties.of()
                         .noCollision()
                         .strength(0.7F)
                         .sound(SoundType.METAL)
@@ -196,7 +173,7 @@ public final class BCABlocks {
         return register(
                 materialName + "_grate",
                 WaterloggedTransparentBlock::new,
-                BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_GRATE)
+                BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_GRATE.asList().getFirst())
                         .mapColor(sourceBlock.defaultMapColor())
                         .sound(sourceBlock.defaultBlockState().getSoundType())
         );
@@ -309,36 +286,9 @@ public final class BCABlocks {
      * Register all oxidizable blocks
      */
     private static void registerOxidizableBlocks() {
-        OxidizableBlocksRegistry.registerWeatheringCopperBlocks(new WeatheringCopperBlocks(
-                COPPER_BUTTON,
-                EXPOSED_COPPER_BUTTON,
-                WEATHERED_COPPER_BUTTON,
-                OXIDIZED_COPPER_BUTTON,
-                WAXED_COPPER_BUTTON,
-                WAXED_EXPOSED_COPPER_BUTTON,
-                WAXED_WEATHERED_COPPER_BUTTON,
-                WAXED_OXIDIZED_COPPER_BUTTON
-        ));
-        OxidizableBlocksRegistry.registerWeatheringCopperBlocks(new WeatheringCopperBlocks(
-                MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE,
-                WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE
-        ));
-        OxidizableBlocksRegistry.registerWeatheringCopperBlocks(new WeatheringCopperBlocks(
-                COPPER_RAIL,
-                EXPOSED_COPPER_RAIL,
-                WEATHERED_COPPER_RAIL,
-                OXIDIZED_COPPER_RAIL,
-                WAXED_COPPER_RAIL,
-                WAXED_EXPOSED_COPPER_RAIL,
-                WAXED_WEATHERED_COPPER_RAIL,
-                WAXED_OXIDIZED_COPPER_RAIL
-        ));
+        OxidizableBlocksRegistry.registerWeatheringCopperBlocks(COPPER_BUTTON);
+        OxidizableBlocksRegistry.registerWeatheringCopperBlocks(MEDIUM_WEIGHTED_PRESSURE_PLATE);
+        OxidizableBlocksRegistry.registerWeatheringCopperBlocks(COPPER_RAIL);
     }
 
     /**

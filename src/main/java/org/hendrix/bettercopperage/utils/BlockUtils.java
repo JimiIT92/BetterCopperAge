@@ -7,50 +7,10 @@ import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 
-import java.util.Locale;
-
 /**
  * Utility methods for {@link Block blocks}
  */
 public final class BlockUtils {
-
-    /**
-     * Get the name of a copper block based on its {@link WeatheringCopper.WeatherState}
-     *
-     * @param weatherState The {@link WeatheringCopper.WeatherState}
-     * @param isWaxed Whether the block is waxed or not
-     * @param blockName The base block name
-     * @return The copper block name
-     */
-    public static String copperBlockName(final WeatheringCopper.WeatherState weatherState, final Boolean isWaxed, final String blockName) {
-        return oxidizableBlockName(weatherState, isWaxed, "copper", blockName);
-    }
-
-    /**
-     * Get the name of a copper block based on its {@link WeatheringCopper.WeatherState}
-     *
-     * @param weatherState The {@link WeatheringCopper.WeatherState}
-     * @param isWaxed Whether the block is waxed or not
-     * @param oxidizableBlockName The base oxidizable block name
-     * @param blockName The base block name
-     * @return The copper block name
-     */
-    public static String oxidizableBlockName(final WeatheringCopper.WeatherState weatherState, final Boolean isWaxed, final String oxidizableBlockName, final String blockName) {
-        return (isWaxed ? "waxed_" : "") + weatherStateName(weatherState) + (WeatheringCopper.WeatherState.UNAFFECTED.equals(weatherState) ? "" : "_") + oxidizableBlockName + "_" + blockName;
-    }
-
-    /**
-     * Get the name of a {@link WeatheringCopper.WeatherState}
-     *
-     * @param weatherState The {@link WeatheringCopper.WeatherState}
-     * @return The {@link WeatheringCopper.WeatherState} name
-     */
-    public static String weatherStateName(final WeatheringCopper.WeatherState weatherState) {
-        if(WeatheringCopper.WeatherState.UNAFFECTED.equals(weatherState)) {
-            return "";
-        }
-        return weatherState.getSerializedName().toLowerCase(Locale.ROOT);
-    }
 
     /**
      * Get the {@link MapColor} of a {@link WeatheringCopper.WeatherState}
@@ -59,12 +19,7 @@ public final class BlockUtils {
      * @return The {@link WeatheringCopper.WeatherState} {@link MapColor}
      */
     public static MapColor weatherStateMapColor(final WeatheringCopper.WeatherState weatherState) {
-        return switch (weatherState) {
-            case UNAFFECTED -> Blocks.COPPER_BLOCK.defaultMapColor();
-            case EXPOSED -> Blocks.EXPOSED_COPPER.defaultMapColor();
-            case WEATHERED -> Blocks.WEATHERED_COPPER.defaultMapColor();
-            case OXIDIZED -> Blocks.OXIDIZED_COPPER.defaultMapColor();
-        };
+        return Blocks.COPPER_BLOCK.weathering().pick(weatherState).defaultMapColor();
     }
 
     /**
