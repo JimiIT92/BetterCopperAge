@@ -65,5 +65,7 @@
   "gamerule.bettercopperage.copper_golem_attracts_lightning": "Copper Golem attracts Lighting",
   "gamerule.bettercopperage.copper_golem_attracts_lightning.description": "Controls whether or not Lightning should be attracted by Copper Golems if there's no Lighting Rod nearby",
   "gamerule.bettercopperage.copper_armor_attracts_lightning": "Copper Armor attracts Lighting",
-  "gamerule.bettercopperage.copper_armor_attracts_lightning.description": "Controls whether or not Lightning should be attracted by any entity wearing a piece of Copper Armor if there's no Lighting Rod nearby"
+  "gamerule.bettercopperage.copper_armor_attracts_lightning.description": "Controls whether or not Lightning should be attracted by any entity wearing a piece of Copper Armor if there's no Lighting Rod nearby",
+  "gamerule.bettercopperage.copper_golem_sort_by_tags": "Copper Golem sort items by tags",
+  "gamerule.bettercopperage.copper_golem_sort_by_tags.description": "Controls whether or not items with teh same Item Tags should be sorted by Copper Golems, even if not present inside the target container"
 }

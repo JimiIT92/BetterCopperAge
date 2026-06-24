@@ -15,6 +15,7 @@ public final class BCAGameRules {
 
     public static final GameRule<Boolean> COPPER_GOLEM_ATTRACTS_LIGHTNING = register("copper_golem_attracts_lightning");
     public static final GameRule<Boolean> COPPER_ARMOR_ATTRACTS_LIGHTNING = register("copper_armor_attracts_lightning");
+    public static final GameRule<Boolean> COPPER_GOLEM_SORT_BY_TAGS = register("copper_golem_sort_by_tags");
 
     //#endregion
 

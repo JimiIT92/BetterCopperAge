@@ -2,15 +2,19 @@ package org.hendrix.bettercopperage.mixin;
 
 import net.minecraft.core.GlobalPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.phys.AABB;
+import org.hendrix.bettercopperage.core.BCAGameRules;
 import org.hendrix.bettercopperage.core.BCATags;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -65,7 +69,39 @@ public final class TransportItemsBetweenContainersMixin {
 
             callbackInfoReturnable.setReturnValue(target == null ? Optional.empty() : Optional.of(target));
         }
+    }
 
+    /**
+     * Make Copper Golem sort items according to item tags as well
+     *
+     * @param body The Copper Golem
+     * @param container The Container where the items should be put
+     * @param callbackInfoReturnable The {@link CallbackInfoReturnable}
+     */
+    @Inject(at = @At(value = "RETURN"), method = "matchesLeavingItemsRequirement", cancellable = true)
+    private static void matchesLeavingItemsRequirement(PathfinderMob body, Container container, CallbackInfoReturnable<Boolean> callbackInfoReturnable) {
+        if(!callbackInfoReturnable.getReturnValue() && body.level().getServer().getGameRules().get(BCAGameRules.COPPER_GOLEM_SORT_BY_TAGS)) {
+            callbackInfoReturnable.setReturnValue(hasItemMatchingHandItemTag(body, container));
+        }
+    }
+
+    /**
+     * Check if the held item has a same tag as one of the items inside the container
+     *
+     * @param body The Copper Golem
+     * @param container The Container where the items should be put
+     * @return True if the held item has at least one of the tags of any item inside the container
+     */
+    @Unique
+    private static boolean hasItemMatchingHandItemTag(final PathfinderMob body, final Container container) {
+        final ItemStack mainHandItem = body.getMainHandItem();
+        for(ItemStack itemStack : container) {
+            if (!itemStack.isEmpty() && itemStack.tags().anyMatch(mainHandItem::is)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 }
