@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:golden_lantern"
+        "recipes": "bettercopperage:golden_lantern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

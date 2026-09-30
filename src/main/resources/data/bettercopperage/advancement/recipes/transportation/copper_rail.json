@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:copper_rail"
+        "recipes": "bettercopperage:copper_rail"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

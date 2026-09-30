@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:oxidized_copper_golem_statue"
+        "recipes": "bettercopperage:oxidized_copper_golem_statue"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

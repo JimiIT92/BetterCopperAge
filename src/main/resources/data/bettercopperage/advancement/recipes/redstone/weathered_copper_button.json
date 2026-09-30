@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:weathered_copper_button"
+        "recipes": "bettercopperage:weathered_copper_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

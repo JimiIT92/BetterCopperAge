@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:waxed_oxidized_medium_weighted_pressure_plate_from_honeycomb"
+        "recipes": "bettercopperage:waxed_oxidized_medium_weighted_pressure_plate_from_honeycomb"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

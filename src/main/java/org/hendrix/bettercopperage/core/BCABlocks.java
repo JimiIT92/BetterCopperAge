@@ -125,7 +125,7 @@ public final class BCABlocks {
                         .forceSolidOn()
                         .noCollision()
                         .strength(0.5F)
-                        .pushReaction(PushReaction.DESTROY)
+                        .pushReaction(PushReaction.POPPED)
         );
     }
 
@@ -249,7 +249,7 @@ public final class BCABlocks {
         return BlockBehaviour.Properties.of()
                 .noCollision()
                 .strength(0.5F)
-                .pushReaction(PushReaction.DESTROY);
+                .pushReaction(PushReaction.POPPED);
     }
 
     /**

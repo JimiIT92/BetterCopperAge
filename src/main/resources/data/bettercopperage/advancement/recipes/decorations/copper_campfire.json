@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:copper_campfire"
+        "recipes": "bettercopperage:copper_campfire"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

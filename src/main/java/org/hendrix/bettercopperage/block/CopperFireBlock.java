@@ -19,27 +19,12 @@ import org.jspecify.annotations.NonNull;
 public final class CopperFireBlock extends BaseFireBlock {
 
     /**
-     * The {@link MapCodec<CopperFireBlock> Copper Fire Block} Codec
-     */
-    public static final MapCodec<CopperFireBlock> CODEC = simpleCodec(CopperFireBlock::new);
-
-    /**
      * Constructor. Set the {@link BlockBehaviour.Properties}
      *
      * @param properties The {@link BlockBehaviour.Properties}
      */
     public CopperFireBlock(final Properties properties) {
         super(properties, 1.5F);
-    }
-
-    /**
-     * Get the block's codec
-     *
-     * @return The block's codec
-     */
-    @Override
-    protected @NonNull MapCodec<? extends BaseFireBlock> codec() {
-        return CODEC;
     }
 
     /**

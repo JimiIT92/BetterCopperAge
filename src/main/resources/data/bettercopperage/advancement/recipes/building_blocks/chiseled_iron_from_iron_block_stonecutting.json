@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:chiseled_iron_from_iron_block_stonecutting"
+        "recipes": "bettercopperage:chiseled_iron_from_iron_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

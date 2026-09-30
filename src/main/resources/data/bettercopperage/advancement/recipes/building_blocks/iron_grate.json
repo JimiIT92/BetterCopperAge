@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:iron_grate"
+        "recipes": "bettercopperage:iron_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

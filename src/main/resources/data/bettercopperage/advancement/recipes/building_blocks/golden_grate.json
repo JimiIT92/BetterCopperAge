@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:golden_grate"
+        "recipes": "bettercopperage:golden_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

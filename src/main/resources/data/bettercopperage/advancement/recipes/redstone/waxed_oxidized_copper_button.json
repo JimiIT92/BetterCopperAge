@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:waxed_oxidized_copper_button"
+        "recipes": "bettercopperage:waxed_oxidized_copper_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

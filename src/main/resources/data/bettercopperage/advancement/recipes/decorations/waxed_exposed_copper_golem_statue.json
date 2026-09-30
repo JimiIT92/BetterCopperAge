@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:waxed_exposed_copper_golem_statue"
+        "recipes": "bettercopperage:waxed_exposed_copper_golem_statue"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:cut_iron_stairs"
+        "recipes": "bettercopperage:cut_iron_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

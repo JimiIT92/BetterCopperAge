@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:cut_iron_slab_from_cut_iron_stonecutting"
+        "recipes": "bettercopperage:cut_iron_slab_from_cut_iron_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -27,16 +27,6 @@ public class CopperRailBlock extends BaseRailBlock {
     public static final EnumProperty<RailShape> SHAPE = BlockStateProperties.RAIL_SHAPE_STRAIGHT;
 
     /**
-     * The {@link MapCodec<CopperRailBlock> Copper Rail Block} Codec
-     */
-    public static final MapCodec<CopperRailBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(
-                        WeatheringCopper.WeatherState.CODEC.fieldOf("oxidationLevel").forGetter(CopperRailBlock::getWeatherState),
-                        propertiesCodec()
-            ).apply(instance, CopperRailBlock::new)
-    );
-
-    /**
      * Constructor. Set the {@link BlockBehaviour.Properties}
      *
      * @param weatherState The {@link WeatheringCopper.WeatherState}
@@ -79,16 +69,6 @@ public class CopperRailBlock extends BaseRailBlock {
      */
     protected void createBlockStateDefinition(final StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(SHAPE, WATERLOGGED);
-    }
-
-    /**
-     * Get the block's codec
-     *
-     * @return The block's codec
-     */
-    @Override
-    public @NonNull MapCodec<CopperRailBlock> codec() {
-        return CODEC;
     }
 
     /**

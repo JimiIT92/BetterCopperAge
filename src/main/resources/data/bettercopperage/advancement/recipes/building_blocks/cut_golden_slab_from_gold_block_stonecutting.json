@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:cut_golden_slab_from_gold_block_stonecutting"
+        "recipes": "bettercopperage:cut_golden_slab_from_gold_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

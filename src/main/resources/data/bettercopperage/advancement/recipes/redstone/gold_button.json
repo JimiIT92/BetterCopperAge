@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:gold_button"
+        "recipes": "bettercopperage:gold_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

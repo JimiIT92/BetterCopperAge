@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:chiseled_gold"
+        "recipes": "bettercopperage:chiseled_gold"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

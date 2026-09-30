@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bettercopperage:iron_button"
+        "recipes": "bettercopperage:iron_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
